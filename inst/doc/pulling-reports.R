@@ -10,13 +10,14 @@ knitr::opts_chunk$set(
 ## ----load-package, eval=FALSE--------------------------------------------
 #  library(rdfp)
 #  options(rdfp.network_code = 123456789)
-#  df_auth()
+#  dfp_auth()
 
 ## ----auth, include = FALSE-----------------------------------------------
+library(here)
 library(rdfp)
-token_path <- file.path("..", "tests", "testthat", "rdfp_token.rds")
+token_path <- here::here("tests", "testthat", "rdfp_token.rds")
 suppressMessages(dfp_auth(token = token_path, verbose = FALSE))
-options_path <- file.path("..", "tests", "testthat", "rdfp_options.rds")
+options_path <- here::here("tests", "testthat", "rdfp_options.rds")
 rdfp_options <- readRDS(options_path)
 options(rdfp.network_code = rdfp_options$network_code)
 
@@ -53,7 +54,7 @@ report_data[,c('Dimension.AD_UNIT_ID', 'Column.AD_SERVER_CLICKS')]
 # In order to run a report you must specify how the report should be structured 
 # by specifying a reportQuery inside a reportJob. All of the dimensions, columns, 
 # date range options, etc. are documented at:
-# https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ReportService.ReportQuery
+# https://developers.google.com/ad-manager/api/reference/v201811/ReportService.ReportQuery
 request_data <- list(reportJob=list(reportQuery=list(dimensions='MONTH_AND_YEAR', 
                                                      dimensions='AD_UNIT_ID',
                                                      adUnitView='FLAT',

@@ -1,4 +1,32 @@
-## rdfp 0.1.2
+## rdfp 0.1.3 [release](https://github.com/StevenMMortimer/rdfp/releases/tag/v0.1.3)
+
+**Note**: DoubleClick for Publishers was recently renamed to Google Ad Manager. For 
+this version we will continue to use the "dfp" abbreviation although everything else 
+has been updated to `v201811` from the Google Ad Manager API reference.
+
+Also, please note that the API has changed the name of `timeZoneID` to `timeZoneId`. 
+We have modified functions to follow suit. You may need to update this argument in existing 
+scripts, especially when dealing with forecasts, reports, orders, and lineitems.
+
+### Features
+
+  * Update to latest version which is `v201811` (#8)
+  * Make the default file name for a cached token `".httr-oauth-rdfp"` so that 
+  it does not clash with other package token names
+  * `dfp_date_to_list()` now infers the timezone if not provided. Previously it always defaulted 
+  to a value of `America/New_York` (#6)
+  * Increased the default `max_tries` argument in `dfp_full_report_wrapper()` from 
+  10 to 20 tries so that long running queries do not "timeout" by reaching the max 
+  number of tries without completing
+
+### Bug Fixes
+
+  * Update vignette names so that they are not duplicated, which is now a required 
+  check for CRAN
+
+___
+
+## rdfp 0.1.2 [release](https://github.com/StevenMMortimer/rdfp/releases/tag/v0.1.2)
 
 ### Features
 

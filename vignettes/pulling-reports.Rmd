@@ -8,7 +8,7 @@ output:
     toc_depth: 4
     keep_md: true
 vignette: >
-  %\VignetteIndexEntry{Availability and Reporting with rdfp}
+  %\VignetteIndexEntry{Pulling Reports with rdfp}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -30,14 +30,15 @@ or we will be prompted to authenticate via the browser.
 ```{r load-package, eval=FALSE}
 library(rdfp)
 options(rdfp.network_code = 123456789)
-df_auth()
+dfp_auth()
 ```
 
 ```{r auth, include = FALSE}
+library(here)
 library(rdfp)
-token_path <- file.path("..", "tests", "testthat", "rdfp_token.rds")
+token_path <- here::here("tests", "testthat", "rdfp_token.rds")
 suppressMessages(dfp_auth(token = token_path, verbose = FALSE))
-options_path <- file.path("..", "tests", "testthat", "rdfp_options.rds")
+options_path <- here::here("tests", "testthat", "rdfp_options.rds")
 rdfp_options <- readRDS(options_path)
 options(rdfp.network_code = rdfp_options$network_code)
 ```
@@ -96,7 +97,7 @@ report_data[,c('Dimension.AD_UNIT_ID', 'Column.AD_SERVER_CLICKS')]
 
 #### A More Detailed Explanation of the Report Process
 
-Reports actually require 3 steps from the [ReportService] (https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ReportService): 
+Reports actually require 3 steps from the [ReportService] (https://developers.google.com/ad-manager/api/reference/v201811/ReportService): 
 1) to request the report, 2) check on its status, and 3) download. This basic process flow 
 is required for all reports requested via this service. The wrapper function used above
 named `dfp_full_report_wrapper` manages all aspects of reporting, so this level of
@@ -106,7 +107,7 @@ detail is not needed unless the wrapper service does not quite fit your needs.
 # In order to run a report you must specify how the report should be structured 
 # by specifying a reportQuery inside a reportJob. All of the dimensions, columns, 
 # date range options, etc. are documented at:
-# https://developers.google.com/doubleclick-publishers/docs/reference/v201802/ReportService.ReportQuery
+# https://developers.google.com/ad-manager/api/reference/v201811/ReportService.ReportQuery
 request_data <- list(reportJob=list(reportQuery=list(dimensions='MONTH_AND_YEAR', 
                                                      dimensions='AD_UNIT_ID',
                                                      adUnitView='FLAT',

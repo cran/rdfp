@@ -11,7 +11,6 @@ knitr::opts_chunk$set(
 suppressWarnings(suppressMessages(library(dplyr)))
 suppressWarnings(suppressMessages(library(lubridate)))
 library(rdfp)
-options(stringsAsFactors = FALSE)
 options(rdfp.network_code = 123456789)
 
 ## ----other-params, eval=FALSE--------------------------------------------
@@ -22,9 +21,10 @@ options(rdfp.network_code = 123456789)
 #  dfp_auth()
 
 ## ----auth, include = FALSE-----------------------------------------------
-token_path <- file.path("..", "tests", "testthat", "rdfp_token.rds")
+library(here)
+token_path <- here::here("tests", "testthat", "rdfp_token.rds")
 suppressMessages(dfp_auth(token = token_path, verbose = FALSE))
-options_path <- file.path("..", "tests", "testthat", "rdfp_options.rds")
+options_path <- here::here("tests", "testthat", "rdfp_options.rds")
 rdfp_options <- readRDS(options_path)
 options(rdfp.network_code = rdfp_options$network_code)
 

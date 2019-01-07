@@ -93,9 +93,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 
 <p>First, we load <strong>rdfp</strong> and specify the DFP network we would like to connect to. Then we authenticate by using <code>dfp_auth()</code>. Any existing cached token would be used or we will be prompted to authenticate via the browser.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(rdfp)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">suppressWarnings</span>(<span class="kw">suppressMessages</span>(<span class="kw">library</span>(dplyr)))
+<span class="kw">suppressWarnings</span>(<span class="kw">suppressMessages</span>(<span class="kw">library</span>(lubridate)))
+<span class="kw">library</span>(rdfp)
 <span class="kw">options</span>(<span class="dt">rdfp.network_code =</span> <span class="dv">123456789</span>)
-<span class="kw">df_auth</span>()</code></pre></div>
+<span class="kw">dfp_auth</span>()</code></pre></div>
 <div id="availability-by-month" class="section level3">
 <h3>Availability by Month</h3>
 <p>Ad traffickers or display advertising reporters might get requests to determine the availability of a line item by month for a multi-month contract proposal. A LineItem has one InventoryTargeting object that describes which AdUnit and Placement objects it can target, and optional additional Targeting subclass objects that represent geographical, custom, or other criteria. You can either:</p>
@@ -142,47 +144,46 @@ single_item &lt;-<span class="st"> </span>line_item_details[[<span class="dv">1<
 <span class="co">#&gt; [1] 2018</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $date$month</span>
-<span class="co">#&gt; [1] 4</span>
+<span class="co">#&gt; [1] 12</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $date$day</span>
-<span class="co">#&gt; [1] 6</span>
+<span class="co">#&gt; [1] 29</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $hour</span>
-<span class="co">#&gt; [1] 22</span>
+<span class="co">#&gt; [1] 12</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $minute</span>
-<span class="co">#&gt; [1] 21</span>
+<span class="co">#&gt; [1] 44</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $second</span>
-<span class="co">#&gt; [1] 10</span>
+<span class="co">#&gt; [1] 29</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; $timeZoneID</span>
+<span class="co">#&gt; $timeZoneId</span>
 <span class="co">#&gt; [1] &quot;America/New_York&quot;</span>
 <span class="co"># supply a date and assume the beginning of the day for hours, mins, secs</span>
 <span class="kw">dfp_date_to_list</span>(<span class="kw">Sys.Date</span>()<span class="op">+</span><span class="dv">1</span>, <span class="st">&quot;beginning&quot;</span>)
-<span class="co">#&gt; The date provided is not at least 1 hour into the future. Setting to one hour after now.</span>
 <span class="co">#&gt; $date</span>
 <span class="co">#&gt; $date$year</span>
 <span class="co">#&gt; [1] 2018</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $date$month</span>
-<span class="co">#&gt; [1] 4</span>
+<span class="co">#&gt; [1] 12</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $date$day</span>
-<span class="co">#&gt; [1] 6</span>
+<span class="co">#&gt; [1] 30</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $hour</span>
-<span class="co">#&gt; [1] 22</span>
+<span class="co">#&gt; [1] 0</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $minute</span>
-<span class="co">#&gt; [1] 21</span>
+<span class="co">#&gt; [1] 0</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $second</span>
-<span class="co">#&gt; [1] 10</span>
+<span class="co">#&gt; [1] 0</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; $timeZoneID</span>
+<span class="co">#&gt; $timeZoneId</span>
 <span class="co">#&gt; [1] &quot;America/New_York&quot;</span></code></pre></div>
 </div>
 <div id="generating-forecasts" class="section level4">
@@ -207,12 +208,12 @@ all_forecasts
 <span class="co">#&gt; # A tibble: 6 x 4</span>
 <span class="co">#&gt;   unitType    availableUnits reservedUnits forecast_month</span>
 <span class="co">#&gt;   &lt;chr&gt;                &lt;dbl&gt;         &lt;dbl&gt; &lt;chr&gt;         </span>
-<span class="co">#&gt; 1 IMPRESSIONS       7699620.         1000. 2018-05       </span>
-<span class="co">#&gt; 2 IMPRESSIONS       7541226.         1000. 2018-06       </span>
-<span class="co">#&gt; 3 IMPRESSIONS       7886497.         1000. 2018-07       </span>
-<span class="co">#&gt; 4 IMPRESSIONS       7671476.         1000. 2018-08       </span>
-<span class="co">#&gt; 5 IMPRESSIONS       7552982.         1000. 2018-09       </span>
-<span class="co">#&gt; 6 IMPRESSIONS       7839864.         1000. 2018-10</span></code></pre></div>
+<span class="co">#&gt; 1 IMPRESSIONS              0          1000 2019-01       </span>
+<span class="co">#&gt; 2 IMPRESSIONS              0          1000 2019-02       </span>
+<span class="co">#&gt; 3 IMPRESSIONS              0          1000 2019-03       </span>
+<span class="co">#&gt; 4 IMPRESSIONS              0          1000 2019-04       </span>
+<span class="co">#&gt; 5 IMPRESSIONS              0          1000 2019-05       </span>
+<span class="co">#&gt; 6 IMPRESSIONS              0          1000 2019-06</span></code></pre></div>
 </div>
 </div>
 <div id="availability-by-targeting-criteria" class="section level3">
@@ -253,7 +254,6 @@ geo_targets &lt;-<span class="st"> </span><span class="kw">lapply</span>(geo_tar
 
 <span class="co"># look at availability for the next 90 days</span>
 this_sample_line<span class="op">$</span>startDateTime &lt;-<span class="st"> </span><span class="kw">dfp_date_to_list</span>(<span class="kw">Sys.Date</span>() <span class="op">+</span><span class="st"> </span><span class="dv">1</span>, <span class="dt">daytime=</span><span class="st">'beginning'</span>)
-<span class="co">#&gt; The date provided is not at least 1 hour into the future. Setting to one hour after now.</span>
 this_sample_line<span class="op">$</span>endDateTime &lt;-<span class="st"> </span><span class="kw">dfp_date_to_list</span>(<span class="kw">Sys.Date</span>() <span class="op">+</span><span class="st"> </span><span class="dv">91</span>, <span class="dt">daytime=</span><span class="st">'end'</span>)</code></pre></div>
 </div>
 <div id="setting-up-the-targeting" class="section level4">
@@ -306,7 +306,7 @@ avails &lt;-<span class="st"> </span>avails <span class="op">%&gt;%</span><span 
 <p>The breakdowns are not necessarily mutually exclusive, so be careful when totaling them up. The counties are exclusive, so it’s okay to sum them.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># total availability across Texas counties</span>
 <span class="kw">sum</span>(avails<span class="op">$</span>ImpressionsAvailable) <span class="op">/</span><span class="st"> </span><span class="kw">sum</span>(avails<span class="op">$</span>ImpressionsTotal)
-<span class="co">#&gt; [1] 0.8840796</span></code></pre></div>
+<span class="co">#&gt; [1] 1</span></code></pre></div>
 </div>
 </div>
 <div id="availability-for-an-existing-line" class="section level3">
@@ -319,9 +319,9 @@ forecast_request &lt;-<span class="st"> </span><span class="kw">list</span>(<spa
 this_result &lt;-<span class="st"> </span><span class="kw">dfp_getAvailabilityForecastById</span>(forecast_request)
 this_result[,<span class="kw">c</span>(<span class="st">'lineItemId'</span>, <span class="st">'orderId'</span>, <span class="st">'availableUnits'</span>, <span class="st">'deliveredUnits'</span>, <span class="st">'matchedUnits'</span>)]
 <span class="co">#&gt; # A tibble: 1 x 5</span>
-<span class="co">#&gt;    lineItemId     orderId availableUnits deliveredUnits matchedUnits</span>
-<span class="co">#&gt;         &lt;dbl&gt;       &lt;dbl&gt;          &lt;dbl&gt;          &lt;dbl&gt;        &lt;dbl&gt;</span>
-<span class="co">#&gt; 1 4382815843. 2117726531.       1455385.        207382.     1783874.</span></code></pre></div>
+<span class="co">#&gt;   lineItemId    orderId availableUnits deliveredUnits matchedUnits</span>
+<span class="co">#&gt;        &lt;dbl&gt;      &lt;dbl&gt;          &lt;dbl&gt;          &lt;dbl&gt;        &lt;dbl&gt;</span>
+<span class="co">#&gt; 1 4578088239 2216754702           1352          16215         1352</span></code></pre></div>
 </div>
 <div id="check-out-the-tests" class="section level3">
 <h3>Check out the Tests</h3>

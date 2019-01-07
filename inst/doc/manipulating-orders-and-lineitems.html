@@ -83,7 +83,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>First, we load <strong>rdfp</strong> and specify the DFP network we would like to connect to. Then we authenticate by using <code>dfp_auth()</code>. Any existing cached token would be used or we will be prompted to authenticate via the browser.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(rdfp)
 <span class="kw">options</span>(<span class="dt">rdfp.network_code =</span> <span class="dv">123456789</span>)
-<span class="kw">df_auth</span>()</code></pre></div>
+<span class="kw">dfp_auth</span>()</code></pre></div>
 <div id="create-an-order" class="section level4">
 <h4>Create an Order</h4>
 <p>This example uses a test company as an advertiser and yourself as the trafficker, to create an order.</p>
@@ -115,11 +115,11 @@ request &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="
 resultset &lt;-<span class="st"> </span><span class="kw">dfp_getLineItemsByStatement</span>(request, <span class="dt">as_df=</span><span class="ot">TRUE</span>)
 resultset[,<span class="kw">c</span>(<span class="st">'orderId'</span>, <span class="st">'id'</span>, <span class="st">'priority'</span>, <span class="st">'deliveryRateType'</span>)]
 <span class="co">#&gt; # A tibble: 3 x 4</span>
-<span class="co">#&gt;       orderId          id priority deliveryRateType</span>
-<span class="co">#&gt;         &lt;dbl&gt;       &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;           </span>
-<span class="co">#&gt; 1 1254227776. 1928427256.      12. EVENLY          </span>
-<span class="co">#&gt; 2 1393728736. 2038280896.      12. EVENLY          </span>
-<span class="co">#&gt; 3 1265251936. 2060032216.      16. EVENLY</span></code></pre></div>
+<span class="co">#&gt;      orderId         id priority deliveryRateType</span>
+<span class="co">#&gt;        &lt;dbl&gt;      &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;           </span>
+<span class="co">#&gt; 1 2231707164 4557799162       12 EVENLY          </span>
+<span class="co">#&gt; 2 2231707164 4557800341       12 EVENLY          </span>
+<span class="co">#&gt; 3 2231707164 4557803758       12 EVENLY</span></code></pre></div>
 </div>
 
 

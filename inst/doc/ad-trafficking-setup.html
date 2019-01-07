@@ -84,7 +84,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>First, we load <strong>rdfp</strong> and specify the DFP network we would like to connect to. Then we authenticate by using <code>dfp_auth()</code>. Any existing cached token would be used or we will be prompted to authenticate via the browser.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(rdfp)
 <span class="kw">options</span>(<span class="dt">rdfp.network_code =</span> <span class="dv">123456789</span>)
-<span class="kw">df_auth</span>()</code></pre></div>
+<span class="kw">dfp_auth</span>()</code></pre></div>
 <div id="setup-custom-labels-for-items" class="section level4">
 <h4>Setup Custom Labels for Items</h4>
 <p>Custom labels are helpful for “tagging” DFP items with metadata that can later be used frequency capping, doing competitive exclusion or other specific actions. See the following link for Google’s explanation on their uses: (<a href="https://support.google.com/dfp\_premium/answer/190565?hl=en&amp;ref_topic=30224" class="uri">https://support.google.com/dfp\_premium/answer/190565?hl=en&amp;ref_topic=30224</a>)</p>
@@ -126,9 +126,9 @@ request_data &lt;-<span class="st"> </span><span class="kw">list</span>(<span cl
 dfp_createCustomTargetingKeys_result &lt;-<span class="st"> </span><span class="kw">dfp_createCustomTargetingKeys</span>(request_data)
 dfp_createCustomTargetingKeys_result
 <span class="co">#&gt; # A tibble: 1 x 5</span>
-<span class="co">#&gt;          id name      displayName  type     status</span>
-<span class="co">#&gt;       &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;        &lt;chr&gt;    &lt;chr&gt; </span>
-<span class="co">#&gt; 1 11687088. Test60559 TestKey60559 FREEFORM ACTIVE</span>
+<span class="co">#&gt;         id name      displayName  type     status</span>
+<span class="co">#&gt;      &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;        &lt;chr&gt;    &lt;chr&gt; </span>
+<span class="co">#&gt; 1 11854593 Test20450 TestKey20450 FREEFORM ACTIVE</span>
 
 <span class="co"># create the values</span>
 request_data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">customTargetingKeyId=</span><span class="kw">rep</span>(dfp_createCustomTargetingKeys_result<span class="op">$</span>id,<span class="dv">2</span>),
@@ -138,10 +138,10 @@ request_data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<s
 dfp_createCustomTargetingValues_result &lt;-<span class="st"> </span><span class="kw">dfp_createCustomTargetingValues</span>(request_data)
 dfp_createCustomTargetingValues_result
 <span class="co">#&gt; # A tibble: 2 x 6</span>
-<span class="co">#&gt;   customTargetingKeyId            id name     displayName matchType status</span>
-<span class="co">#&gt;                  &lt;dbl&gt;         &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;       &lt;chr&gt;     &lt;chr&gt; </span>
-<span class="co">#&gt; 1            11687088. 447924161469. TestVal… TestValue1  EXACT     ACTIVE</span>
-<span class="co">#&gt; 2            11687088. 447924332165. TestVal… TestValue2  EXACT     ACTIVE</span></code></pre></div>
+<span class="co">#&gt;   customTargetingKeyId           id name       displayName matchType status</span>
+<span class="co">#&gt;                  &lt;dbl&gt;        &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;       &lt;chr&gt;     &lt;chr&gt; </span>
+<span class="co">#&gt; 1             11854593 448054986518 TestValue1 TestValue1  EXACT     ACTIVE</span>
+<span class="co">#&gt; 2             11854593 448054986521 TestValue2 TestValue2  EXACT     ACTIVE</span></code></pre></div>
 </div>
 
 
