@@ -13,7 +13,7 @@
 #' 
 #' Creates new AdUnit objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/InventoryService#createAdUnits}{Google Documentation for createAdUnits}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/InventoryService#createAdUnits}{Google Documentation for createAdUnits}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -26,6 +26,7 @@
 #' \dontrun{
 #'  res <- dfp_createAdUnits(request_data)
 #' }
+
 #' @export
 dfp_createAdUnits <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='InventoryService', root_name='createAdUnits', data=request_data)
@@ -41,7 +42,7 @@ dfp_createAdUnits <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{targetPlatform}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/InventoryService#getAdUnitSizesByStatement}{Google Documentation for getAdUnitSizesByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/InventoryService#getAdUnitSizesByStatement}{Google Documentation for getAdUnitSizesByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -55,6 +56,7 @@ dfp_createAdUnits <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getAdUnitSizesByStatement(dat)
 #' }
+
 #' @export
 dfp_getAdUnitSizesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='InventoryService', root_name='getAdUnitSizesByStatement', data=request_data)
@@ -75,7 +77,7 @@ dfp_getAdUnitSizesByStatement <- function(request_data, as_df=TRUE, verbose=FALS
 #'   \item{lastModifiedDateTime}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/InventoryService#getAdUnitsByStatement}{Google Documentation for getAdUnitsByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/InventoryService#getAdUnitsByStatement}{Google Documentation for getAdUnitsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -89,6 +91,7 @@ dfp_getAdUnitSizesByStatement <- function(request_data, as_df=TRUE, verbose=FALS
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getAdUnitsByStatement(dat)
 #' }
+
 #' @export
 dfp_getAdUnitsByStatement <- function(request_data, as_df=FALSE, verbose=FALSE){
   request_body <- form_request_body(service='InventoryService', root_name='getAdUnitsByStatement', data=request_data)
@@ -101,7 +104,7 @@ dfp_getAdUnitsByStatement <- function(request_data, as_df=FALSE, verbose=FALSE){
 #' 
 #' Performs actions on AdUnit objects that match the given Statement query.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/InventoryService#performAdUnitAction}{Google Documentation for performAdUnitAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/InventoryService#performAdUnitAction}{Google Documentation for performAdUnitAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -114,6 +117,7 @@ dfp_getAdUnitsByStatement <- function(request_data, as_df=FALSE, verbose=FALSE){
 #' \dontrun{
 #'  res <- dfp_performAdUnitAction(request_data)
 #' }
+
 #' @export
 dfp_performAdUnitAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='InventoryService', root_name='performAdUnitAction', data=request_data)
@@ -126,7 +130,7 @@ dfp_performAdUnitAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' Updates the specified AdUnit objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/InventoryService#updateAdUnits}{Google Documentation for updateAdUnits}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/InventoryService#updateAdUnits}{Google Documentation for updateAdUnits}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -139,6 +143,7 @@ dfp_performAdUnitAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' \dontrun{
 #'  res <- dfp_updateAdUnits(request_data)
 #' }
+
 #' @export
 dfp_updateAdUnits <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='InventoryService', root_name='updateAdUnits', data=request_data)

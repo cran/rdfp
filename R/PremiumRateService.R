@@ -3,15 +3,15 @@
 #' Provides methods for managing PremiumRate objects.
 #' To use this service,
 #' you need to have the new sales management solution enabled on your network.
-#' If you do not see a "Sales" tab in
-#' \href{https://www.google.com/dfp}{DoubleClick for Publishers (DFP)}, you
+#' If you do not see a "Sales" tab in <a
+#' href="https://www.google.com/dfp">DoubleClick for Publishers (DFP)</a>, you
 #' will not be able to use this service.
 #' 
 #' createPremiumRates
 #' 
 #' Creates a list of new PremiumRate objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/PremiumRateService#createPremiumRates}{Google Documentation for createPremiumRates}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/PremiumRateService#createPremiumRates}{Google Documentation for createPremiumRates}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -24,6 +24,7 @@
 #' \dontrun{
 #'  res <- dfp_createPremiumRates(request_data)
 #' }
+
 #' @export
 dfp_createPremiumRates <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='PremiumRateService', root_name='createPremiumRates', data=request_data)
@@ -41,7 +42,7 @@ dfp_createPremiumRates <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{pricingMethod}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/PremiumRateService#getPremiumRatesByStatement}{Google Documentation for getPremiumRatesByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/PremiumRateService#getPremiumRatesByStatement}{Google Documentation for getPremiumRatesByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -55,6 +56,7 @@ dfp_createPremiumRates <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getPremiumRatesByStatement(dat)
 #' }
+
 #' @export
 dfp_getPremiumRatesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='PremiumRateService', root_name='getPremiumRatesByStatement', data=request_data)
@@ -67,7 +69,7 @@ dfp_getPremiumRatesByStatement <- function(request_data, as_df=TRUE, verbose=FAL
 #' 
 #' Updates the specified PremiumRate objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/PremiumRateService#updatePremiumRates}{Google Documentation for updatePremiumRates}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/PremiumRateService#updatePremiumRates}{Google Documentation for updatePremiumRates}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -80,6 +82,7 @@ dfp_getPremiumRatesByStatement <- function(request_data, as_df=TRUE, verbose=FAL
 #' \dontrun{
 #'  res <- dfp_updatePremiumRates(request_data)
 #' }
+
 #' @export
 dfp_updatePremiumRates <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='PremiumRateService', root_name='updatePremiumRates', data=request_data)

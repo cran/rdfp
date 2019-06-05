@@ -17,7 +17,7 @@
       #' units that the line item can book, and the total number of units 
       #' matching the line item's targeting.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ForecastService#getAvailabilityForecast}{Google Documentation for getAvailabilityForecast}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ForecastService#getAvailabilityForecast}{Google Documentation for getAvailabilityForecast}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -43,6 +43,7 @@
 #'                                           includeContendingLineItems='true'))
 #' dfp_getAvailabilityForecast_result <- dfp_getAvailabilityForecast(request_data)
 #' }
+
 #' @export
 dfp_getAvailabilityForecast <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ForecastService', root_name='getAvailabilityForecast', data=request_data)
@@ -58,7 +59,7 @@ dfp_getAvailabilityForecast <- function(request_data, as_df=TRUE, verbose=FALSE)
 #' Only line items having type LineItemType SPONSORSHIP or LineItemType STANDARD are valid. Other types will result in ReservationDetailsError.Reason LINE_ITEM_TYPE_NOT_ALLOWED. @@param lineItemId the ID of a LineItem to run the forecast on. @@param forecastOptions options controlling the forecast Gets an AvailabilityForecast for an existing LineItem object. An availability forecast reports the maximum number of available units that the line item can be booked with, and also the total number of units matching the line item's targeting.
 #' Only line items having type LineItemType SPONSORSHIP or LineItemType STANDARD are valid. Other types will result in ReservationDetailsError.Reason LINE_ITEM_TYPE_NOT_ALLOWED. @@param lineItemId the ID of a LineItem to run the forecast on. @@param forecastOptions options controlling the forecast
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ForecastService#getAvailabilityForecastById}{Google Documentation for getAvailabilityForecastById}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ForecastService#getAvailabilityForecastById}{Google Documentation for getAvailabilityForecastById}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -76,6 +77,7 @@ dfp_getAvailabilityForecast <- function(request_data, as_df=TRUE, verbose=FALSE)
 #'                                           includeContendingLineItems='true'))
 #' result <- dfp_getAvailabilityForecastById(request_data)
 #' }
+
 #' @export
 dfp_getAvailabilityForecastById <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ForecastService', root_name='getAvailabilityForecastById', data=request_data)
@@ -88,7 +90,7 @@ dfp_getAvailabilityForecastById <- function(request_data, as_df=TRUE, verbose=FA
 #' 
 #' Gets the delivery forecast for a list of ProspectiveLineItem objects in a single delivery simulation with line items potentially contending with each other. A delivery forecast reports the number of units that will be delivered to each line item given the line item goals and contentions from other line items. Gets the delivery forecast for a list of ProspectiveLineItem objects in a single delivery simulation with line items potentially contending with each other. A delivery forecast reports the number of units that will be delivered to each line item given the line item goals and contentions from other line items. @@param lineItems line items to be forecasted for delivery @@param forecastOptions options controlling the forecast Gets the delivery forecast for a list of ProspectiveLineItem objects in a single delivery simulation with line items potentially contending with each other. A delivery forecast reports the number of units that will be delivered to each line item given the line item goals and contentions from other line items. @@param lineItems line items to be forecasted for delivery @@param forecastOptions options controlling the forecast
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ForecastService#getDeliveryForecast}{Google Documentation for getDeliveryForecast}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ForecastService#getDeliveryForecast}{Google Documentation for getDeliveryForecast}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -113,6 +115,7 @@ dfp_getAvailabilityForecastById <- function(request_data, as_df=TRUE, verbose=FA
 #'                      forecastOptions=list(ignoredLineItemIds=NULL))
 #' dfp_getDeliveryForecast_result <- dfp_getDeliveryForecast(request_data)
 #' }
+
 #' @export
 dfp_getDeliveryForecast <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ForecastService', root_name='getDeliveryForecast', data=request_data)
@@ -125,7 +128,7 @@ dfp_getDeliveryForecast <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' Gets the delivery forecast for a list of existing LineItem objects in a single delivery simulation. A delivery forecast reports the number of units that will be delivered to each line item given the line item goals and contentions from other line items. Gets the delivery forecast for a list of existing LineItem objects in a single delivery simulation. A delivery forecast reports the number of units that will be delivered to each line item given the line item goals and contentions from other line items. @@param lineItemIds the IDs of line items to be forecasted for delivery @@param forecastOptions options controlling the forecast Gets the delivery forecast for a list of existing LineItem objects in a single delivery simulation. A delivery forecast reports the number of units that will be delivered to each line item given the line item goals and contentions from other line items. @@param lineItemIds the IDs of line items to be forecasted for delivery @@param forecastOptions options controlling the forecast
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ForecastService#getDeliveryForecastByIds}{Google Documentation for getDeliveryForecastByIds}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ForecastService#getDeliveryForecastByIds}{Google Documentation for getDeliveryForecastByIds}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -144,6 +147,7 @@ dfp_getDeliveryForecast <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'                      forecastOptions=list(ignoredLineItemIds=NULL))
 #' result <- dfp_getDeliveryForecastByIds(request_data)
 #' }
+
 #' @export
 dfp_getDeliveryForecastByIds <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ForecastService', root_name='getDeliveryForecastByIds', data=request_data)

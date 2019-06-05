@@ -33,7 +33,7 @@
 #'   \item{daiIngestStatus}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ContentService#getContentByStatement}{Google Documentation for getContentByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ContentService#getContentByStatement}{Google Documentation for getContentByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -47,6 +47,7 @@
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getContentByStatement(dat)
 #' }
+
 #' @export
 dfp_getContentByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ContentService', root_name='getContentByStatement', data=request_data)
@@ -65,7 +66,7 @@ dfp_getContentByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{lastModifiedDateTime}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ContentService#getContentByStatementAndCustomTargetingValue}{Google Documentation for getContentByStatementAndCustomTargetingValue}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ContentService#getContentByStatementAndCustomTargetingValue}{Google Documentation for getContentByStatementAndCustomTargetingValue}
 #' 
 #' @param as_df a boolean indicating whether to attempt to parse the result into
 #' a \code{data.frame}
@@ -75,6 +76,7 @@ dfp_getContentByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' \dontrun{
 #'  res <- dfp_getContentByStatementAndCustomTargetingValue()
 #' }
+
 #' @export
 dfp_getContentByStatementAndCustomTargetingValue <- function(as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ContentService', root_name='getContentByStatementAndCustomTargetingValue', data=NULL)

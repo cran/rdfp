@@ -28,7 +28,7 @@
 #'   \item{reconciledLineItemDays}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ReconciliationReportRowService#getReconciliationReportRowsByStatement}{Google Documentation for getReconciliationReportRowsByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ReconciliationReportRowService#getReconciliationReportRowsByStatement}{Google Documentation for getReconciliationReportRowsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -42,6 +42,7 @@
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getReconciliationReportRowsByStatement(dat)
 #' }
+
 #' @export
 dfp_getReconciliationReportRowsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ReconciliationReportRowService', root_name='getReconciliationReportRowsByStatement', data=request_data)
@@ -54,7 +55,7 @@ dfp_getReconciliationReportRowsByStatement <- function(request_data, as_df=TRUE,
 #' 
 #' Updates a list of ReconciliationReportRow which belong to same ReconciliationReport.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ReconciliationReportRowService#updateReconciliationReportRows}{Google Documentation for updateReconciliationReportRows}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ReconciliationReportRowService#updateReconciliationReportRows}{Google Documentation for updateReconciliationReportRows}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -67,6 +68,7 @@ dfp_getReconciliationReportRowsByStatement <- function(request_data, as_df=TRUE,
 #' \dontrun{
 #'  res <- dfp_updateReconciliationReportRows(request_data)
 #' }
+
 #' @export
 dfp_updateReconciliationReportRows <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ReconciliationReportRowService', root_name='updateReconciliationReportRows', data=request_data)

@@ -17,7 +17,7 @@
 #' 
 #' Creates new LineItem objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/LineItemService#createLineItems}{Google Documentation for createLineItems}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/LineItemService#createLineItems}{Google Documentation for createLineItems}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -30,6 +30,7 @@
 #' \dontrun{
 #'  res <- dfp_createLineItems(request_data)
 #' }
+
 #' @export
 dfp_createLineItems <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LineItemService', root_name='createLineItems', data=request_data)
@@ -60,7 +61,7 @@ dfp_createLineItems <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{UnitsBought}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/LineItemService#getLineItemsByStatement}{Google Documentation for getLineItemsByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/LineItemService#getLineItemsByStatement}{Google Documentation for getLineItemsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -74,6 +75,7 @@ dfp_createLineItems <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' filter <- "WHERE LineItemType='STANDARD' and Status='DELIVERING' LIMIT 10"
 #' result <- dfp_getLineItemsByStatement(list(filterStatement=list(query=filter)))
 #' }
+
 #' @export
 dfp_getLineItemsByStatement <- function(request_data, as_df=FALSE, verbose=FALSE){
   request_body <- form_request_body(service='LineItemService', root_name='getLineItemsByStatement', data=request_data)
@@ -82,11 +84,34 @@ dfp_getLineItemsByStatement <- function(request_data, as_df=FALSE, verbose=FALSE
   return(result)
 }
 #' 
+#' hasCustomPacingCurve
+#' 
+#' Returns whether a custom pacing curve has been uploaded to Google Cloud Storage for a line item. Returns whether a custom pacing curve has been uploaded to Google Cloud Storage for a line item. @@param lineItemId the ID of the line item Returns whether a custom pacing curve has been uploaded to Google Cloud Storage for a line item. @@param lineItemId the ID of the line item
+#' 
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/LineItemService#hasCustomPacingCurve}{Google Documentation for hasCustomPacingCurve}
+#' 
+#' @param as_df a boolean indicating whether to attempt to parse the result into
+#' a \code{data.frame}
+#' @param verbose a boolean indicating whether to print the service URL and POSTed XML
+#' @return a \code{data.frame} or \code{list} containing all the elements of a hasCustomPacingCurveResponse 
+#' @examples
+#' \dontrun{
+#'  res <- dfp_hasCustomPacingCurve()
+#' }
+
+#' @export
+dfp_hasCustomPacingCurve <- function(as_df=TRUE, verbose=FALSE){
+  request_body <- form_request_body(service='LineItemService', root_name='hasCustomPacingCurve', data=NULL)
+  httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
+  result <- parse_soap_response(httr_response=httr_response, resp_element='hasCustomPacingCurveResponse', as_df=as_df)
+  return(result)
+}
+#' 
 #' performLineItemAction
 #' 
 #' Performs actions on LineItem objects that match the given Statement query.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/LineItemService#performLineItemAction}{Google Documentation for performLineItemAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/LineItemService#performLineItemAction}{Google Documentation for performLineItemAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -99,6 +124,7 @@ dfp_getLineItemsByStatement <- function(request_data, as_df=FALSE, verbose=FALSE
 #' \dontrun{
 #'  res <- dfp_performLineItemAction(request_data)
 #' }
+
 #' @export
 dfp_performLineItemAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LineItemService', root_name='performLineItemAction', data=request_data)
@@ -111,7 +137,7 @@ dfp_performLineItemAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' Updates the specified LineItem objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/LineItemService#updateLineItems}{Google Documentation for updateLineItems}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/LineItemService#updateLineItems}{Google Documentation for updateLineItems}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -124,6 +150,7 @@ dfp_performLineItemAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' \dontrun{
 #'  res <- dfp_updateLineItems(request_data)
 #' }
+
 #' @export
 dfp_updateLineItems <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LineItemService', root_name='updateLineItems', data=request_data)

@@ -7,7 +7,7 @@
 #' 
 #' Creates new RuleBasedFirstPartyAudienceSegment objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/AudienceSegmentService#createAudienceSegments}{Google Documentation for createAudienceSegments}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/AudienceSegmentService#createAudienceSegments}{Google Documentation for createAudienceSegments}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -20,6 +20,7 @@
 #' \dontrun{
 #'  res <- dfp_createAudienceSegments(request_data)
 #' }
+
 #' @export
 dfp_createAudienceSegments <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='AudienceSegmentService', root_name='createAudienceSegments', data=request_data)
@@ -44,7 +45,7 @@ dfp_createAudienceSegments <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{endDateTime}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/AudienceSegmentService#getAudienceSegmentsByStatement}{Google Documentation for getAudienceSegmentsByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/AudienceSegmentService#getAudienceSegmentsByStatement}{Google Documentation for getAudienceSegmentsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -58,6 +59,7 @@ dfp_createAudienceSegments <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getAudienceSegmentsByStatement(dat)
 #' }
+
 #' @export
 dfp_getAudienceSegmentsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='AudienceSegmentService', root_name='getAudienceSegmentsByStatement', data=request_data)
@@ -70,7 +72,7 @@ dfp_getAudienceSegmentsByStatement <- function(request_data, as_df=TRUE, verbose
 #' 
 #' Performs the given AudienceSegmentAction on the set of segments identified by the given statement.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/AudienceSegmentService#performAudienceSegmentAction}{Google Documentation for performAudienceSegmentAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/AudienceSegmentService#performAudienceSegmentAction}{Google Documentation for performAudienceSegmentAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -83,6 +85,7 @@ dfp_getAudienceSegmentsByStatement <- function(request_data, as_df=TRUE, verbose
 #' \dontrun{
 #'  res <- dfp_performAudienceSegmentAction(request_data)
 #' }
+
 #' @export
 dfp_performAudienceSegmentAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='AudienceSegmentService', root_name='performAudienceSegmentAction', data=request_data)
@@ -95,7 +98,7 @@ dfp_performAudienceSegmentAction <- function(request_data, as_df=TRUE, verbose=F
 #' 
 #' Updates the given RuleBasedFirstPartyAudienceSegment objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/AudienceSegmentService#updateAudienceSegments}{Google Documentation for updateAudienceSegments}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/AudienceSegmentService#updateAudienceSegments}{Google Documentation for updateAudienceSegments}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -108,6 +111,7 @@ dfp_performAudienceSegmentAction <- function(request_data, as_df=TRUE, verbose=F
 #' \dontrun{
 #'  res <- dfp_updateAudienceSegments(request_data)
 #' }
+
 #' @export
 dfp_updateAudienceSegments <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='AudienceSegmentService', root_name='updateAudienceSegments', data=request_data)

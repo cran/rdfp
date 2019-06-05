@@ -82,16 +82,16 @@ request_data <- list(selectStatement=
                                     , CountryCode
                                     , Type 
                                   FROM Geo_Target 
-                                  WHERE CountryCode='US' AND (TYPE='STATE' OR TYPE='COUNTY')"))
+                                  WHERE CountryCode='US' AND (Type='State' OR Type='County')"))
 
 us_geos <- dfp_select(request_data)
 texas_id <- us_geos %>%
   filter(type == 'STATE', name == 'Texas') %>%
-  select(id, state=name)
+  select(id, state = name)
 
 us_counties <- us_geos %>%
   filter(type == 'COUNTY') %>%
-  select(id, canonicalparentid, county=name)
+  select(id, canonicalparentid, county = name)
 
 texas_counties <- inner_join(us_counties, texas_id, by=c('canonicalparentid'='id'))
 
@@ -118,12 +118,12 @@ this_sample_line$targeting$inventoryTargeting <- sample_line$targeting$inventory
 
 ## ----make-county-request-------------------------------------------------
 # request the targeting criteria breakdown this time to get that detail
-forecast_request <- list(lineItem=list(lineItem=this_sample_line),
-                         forecastOptions=list(includeTargetingCriteriaBreakdown='true', 
-                                              includeContendingLineItems='false'))
+forecast_request <- list(lineItem = list(lineItem = this_sample_line),
+                         forecastOptions = list(includeTargetingCriteriaBreakdown = 'true', 
+                                                includeContendingLineItems = 'false'))
 
 # get the forecasted availability and make sure to specify as_df=FALSE
-this_result <- dfp_getAvailabilityForecast(forecast_request, as_df=FALSE)[[1]]
+this_result <- dfp_getAvailabilityForecast(forecast_request, as_df=FALSE)
 breakdowns <- this_result[c(names(this_result) %in% 'targetingCriteriaBreakdowns')]
 
 ## ----availability-by-county----------------------------------------------

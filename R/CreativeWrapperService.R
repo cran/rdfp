@@ -16,7 +16,7 @@
 #'   \item{CreativeWrapper header or CreativeWrapper footer}
 #' } 
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CreativeWrapperService#createCreativeWrappers}{Google Documentation for createCreativeWrappers}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/CreativeWrapperService#createCreativeWrappers}{Google Documentation for createCreativeWrappers}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -29,6 +29,7 @@
 #' \dontrun{
 #'  res <- dfp_createCreativeWrappers(request_data)
 #' }
+
 #' @export
 dfp_createCreativeWrappers <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CreativeWrapperService', root_name='createCreativeWrappers', data=request_data)
@@ -47,7 +48,7 @@ dfp_createCreativeWrappers <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{ordering}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CreativeWrapperService#getCreativeWrappersByStatement}{Google Documentation for getCreativeWrappersByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/CreativeWrapperService#getCreativeWrappersByStatement}{Google Documentation for getCreativeWrappersByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -61,6 +62,7 @@ dfp_createCreativeWrappers <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getCreativeWrappersByStatement(dat)
 #' }
+
 #' @export
 dfp_getCreativeWrappersByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CreativeWrapperService', root_name='getCreativeWrappersByStatement', data=request_data)
@@ -73,7 +75,7 @@ dfp_getCreativeWrappersByStatement <- function(request_data, as_df=TRUE, verbose
 #' 
 #' Performs actions on CreativeWrapper objects that match the given Statement query.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CreativeWrapperService#performCreativeWrapperAction}{Google Documentation for performCreativeWrapperAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/CreativeWrapperService#performCreativeWrapperAction}{Google Documentation for performCreativeWrapperAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -86,6 +88,7 @@ dfp_getCreativeWrappersByStatement <- function(request_data, as_df=TRUE, verbose
 #' \dontrun{
 #'  res <- dfp_performCreativeWrapperAction(request_data)
 #' }
+
 #' @export
 dfp_performCreativeWrapperAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CreativeWrapperService', root_name='performCreativeWrapperAction', data=request_data)
@@ -98,7 +101,7 @@ dfp_performCreativeWrapperAction <- function(request_data, as_df=TRUE, verbose=F
 #' 
 #' Updates the specified CreativeWrapper objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CreativeWrapperService#updateCreativeWrappers}{Google Documentation for updateCreativeWrappers}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/CreativeWrapperService#updateCreativeWrappers}{Google Documentation for updateCreativeWrappers}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -111,6 +114,7 @@ dfp_performCreativeWrapperAction <- function(request_data, as_df=TRUE, verbose=F
 #' \dontrun{
 #'  res <- dfp_updateCreativeWrappers(request_data)
 #' }
+
 #' @export
 dfp_updateCreativeWrappers <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CreativeWrapperService', root_name='updateCreativeWrappers', data=request_data)

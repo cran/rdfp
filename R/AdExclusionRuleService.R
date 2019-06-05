@@ -10,7 +10,7 @@
 #' 
 #' Creates new AdExclusionRule objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/AdExclusionRuleService#createAdExclusionRules}{Google Documentation for createAdExclusionRules}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/AdExclusionRuleService#createAdExclusionRules}{Google Documentation for createAdExclusionRules}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -23,6 +23,7 @@
 #' \dontrun{
 #'  res <- dfp_createAdExclusionRules(request_data)
 #' }
+
 #' @export
 dfp_createAdExclusionRules <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='AdExclusionRuleService', root_name='createAdExclusionRules', data=request_data)
@@ -40,7 +41,7 @@ dfp_createAdExclusionRules <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{status}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/AdExclusionRuleService#getAdExclusionRulesByStatement}{Google Documentation for getAdExclusionRulesByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/AdExclusionRuleService#getAdExclusionRulesByStatement}{Google Documentation for getAdExclusionRulesByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -54,6 +55,7 @@ dfp_createAdExclusionRules <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getAdExclusionRulesByStatement(dat)
 #' }
+
 #' @export
 dfp_getAdExclusionRulesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='AdExclusionRuleService', root_name='getAdExclusionRulesByStatement', data=request_data)
@@ -66,7 +68,7 @@ dfp_getAdExclusionRulesByStatement <- function(request_data, as_df=TRUE, verbose
 #' 
 #' Performs action on AdExclusionRule objects that satisfy the given Statement query.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/AdExclusionRuleService#performAdExclusionRuleAction}{Google Documentation for performAdExclusionRuleAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/AdExclusionRuleService#performAdExclusionRuleAction}{Google Documentation for performAdExclusionRuleAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -79,6 +81,7 @@ dfp_getAdExclusionRulesByStatement <- function(request_data, as_df=TRUE, verbose
 #' \dontrun{
 #'  res <- dfp_performAdExclusionRuleAction(request_data)
 #' }
+
 #' @export
 dfp_performAdExclusionRuleAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='AdExclusionRuleService', root_name='performAdExclusionRuleAction', data=request_data)
@@ -91,7 +94,7 @@ dfp_performAdExclusionRuleAction <- function(request_data, as_df=TRUE, verbose=F
 #' 
 #' Updates the specified AdExclusionRule objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/AdExclusionRuleService#updateAdExclusionRules}{Google Documentation for updateAdExclusionRules}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/AdExclusionRuleService#updateAdExclusionRules}{Google Documentation for updateAdExclusionRules}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -104,6 +107,7 @@ dfp_performAdExclusionRuleAction <- function(request_data, as_df=TRUE, verbose=F
 #' \dontrun{
 #'  res <- dfp_updateAdExclusionRules(request_data)
 #' }
+
 #' @export
 dfp_updateAdExclusionRules <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='AdExclusionRuleService', root_name='updateAdExclusionRules', data=request_data)

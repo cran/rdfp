@@ -4,7 +4,7 @@
 \alias{dfp_getReportJobStatus}
 \title{getReportJobStatus}
 \usage{
-dfp_getReportJobStatus(request_data, as_df = TRUE, verbose = FALSE)
+dfp_getReportJobStatus(request_data, as_df = FALSE, verbose = FALSE)
 }
 \arguments{
 \item{request_data}{a \code{list} or \code{data.frame} of data elements
@@ -41,7 +41,7 @@ dfp_getReportJobStatus_result
 
 # a simple while loop can keep checking a long running request until ready
 counter <- 0
-while(dfp_getReportJobStatus_result$V1 != 'COMPLETED' & counter < 10){
+while(dfp_getReportJobStatus_result != 'COMPLETED' & counter < 10){
   dfp_getReportJobStatus_result <- dfp_getReportJobStatus(request_data)
   Sys.sleep(3)
   counter <- counter + 1
@@ -49,5 +49,5 @@ while(dfp_getReportJobStatus_result$V1 != 'COMPLETED' & counter < 10){
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/ReportService#getReportJobStatus}{Google Documentation for getReportJobStatus}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/ReportService#getReportJobStatus}{Google Documentation for getReportJobStatus}
 }

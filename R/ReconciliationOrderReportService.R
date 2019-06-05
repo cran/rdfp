@@ -16,7 +16,7 @@
 #'   \item{submitterId}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ReconciliationOrderReportService#getReconciliationOrderReportsByStatement}{Google Documentation for getReconciliationOrderReportsByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ReconciliationOrderReportService#getReconciliationOrderReportsByStatement}{Google Documentation for getReconciliationOrderReportsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -30,6 +30,7 @@
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getReconciliationOrderReportsByStatement(dat)
 #' }
+
 #' @export
 dfp_getReconciliationOrderReportsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ReconciliationOrderReportService', root_name='getReconciliationOrderReportsByStatement', data=request_data)
@@ -47,7 +48,7 @@ dfp_getReconciliationOrderReportsByStatement <- function(request_data, as_df=TRU
 #'   \item{reconciliationReportId}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ReconciliationOrderReportService#performReconciliationOrderReportAction}{Google Documentation for performReconciliationOrderReportAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ReconciliationOrderReportService#performReconciliationOrderReportAction}{Google Documentation for performReconciliationOrderReportAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -60,6 +61,7 @@ dfp_getReconciliationOrderReportsByStatement <- function(request_data, as_df=TRU
 #' \dontrun{
 #'  res <- dfp_performReconciliationOrderReportAction(request_data)
 #' }
+
 #' @export
 dfp_performReconciliationOrderReportAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ReconciliationOrderReportService', root_name='performReconciliationOrderReportAction', data=request_data)
@@ -72,7 +74,7 @@ dfp_performReconciliationOrderReportAction <- function(request_data, as_df=TRUE,
 #' 
 #' Updates a list of ReconciliationOrderReport reconciliation order reports which belong to a ReconciliationReport.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ReconciliationOrderReportService#updateReconciliationOrderReports}{Google Documentation for updateReconciliationOrderReports}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ReconciliationOrderReportService#updateReconciliationOrderReports}{Google Documentation for updateReconciliationOrderReports}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -85,6 +87,7 @@ dfp_performReconciliationOrderReportAction <- function(request_data, as_df=TRUE,
 #' \dontrun{
 #'  res <- dfp_updateReconciliationOrderReports(request_data)
 #' }
+
 #' @export
 dfp_updateReconciliationOrderReports <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ReconciliationOrderReportService', root_name='updateReconciliationOrderReports', data=request_data)

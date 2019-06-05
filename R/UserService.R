@@ -10,7 +10,7 @@
 #' 
 #' Creates new User objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/UserService#createUsers}{Google Documentation for createUsers}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/UserService#createUsers}{Google Documentation for createUsers}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -26,6 +26,7 @@
 #'                            roleId = rep(-1, 3))
 #' result <- dfp_createUsers(request_data)
 #' }
+
 #' @export
 dfp_createUsers <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='UserService', root_name='createUsers', data=request_data)
@@ -38,7 +39,7 @@ dfp_createUsers <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' Returns the Role objects that are defined for the users of the network. Returns the Role objects that are defined for the users of the network. @@return the roles defined for the user's network Returns the Role objects that are defined for the users of the network. @@return the roles defined for the user's network
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/UserService#getAllRoles}{Google Documentation for getAllRoles}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/UserService#getAllRoles}{Google Documentation for getAllRoles}
 #' 
 #' @param as_df a boolean indicating whether to attempt to parse the result into
 #' a \code{data.frame}
@@ -48,6 +49,7 @@ dfp_createUsers <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' \dontrun{
 #'  res <- dfp_getAllRoles()
 #' }
+
 #' @export
 dfp_getAllRoles <- function(as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='UserService', root_name='getAllRoles', data=NULL)
@@ -60,7 +62,7 @@ dfp_getAllRoles <- function(as_df=TRUE, verbose=FALSE){
 #' 
 #' Returns the current User. Returns the current User. @@return the current user Returns the current User. @@return the current user
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/UserService#getCurrentUser}{Google Documentation for getCurrentUser}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/UserService#getCurrentUser}{Google Documentation for getCurrentUser}
 #' 
 #' @param as_df a boolean indicating whether to attempt to parse the result into
 #' a \code{data.frame}
@@ -70,6 +72,7 @@ dfp_getAllRoles <- function(as_df=TRUE, verbose=FALSE){
 #' \dontrun{
 #'  res <- dfp_getCurrentUser()
 #' }
+
 #' @export
 dfp_getCurrentUser <- function(as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='UserService', root_name='getCurrentUser', data=NULL)
@@ -90,7 +93,7 @@ dfp_getCurrentUser <- function(as_df=TRUE, verbose=FALSE){
 #'   \item{status}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/UserService#getUsersByStatement}{Google Documentation for getUsersByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/UserService#getUsersByStatement}{Google Documentation for getUsersByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -104,6 +107,7 @@ dfp_getCurrentUser <- function(as_df=TRUE, verbose=FALSE){
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getUsersByStatement(dat)
 #' }
+
 #' @export
 dfp_getUsersByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='UserService', root_name='getUsersByStatement', data=request_data)
@@ -116,7 +120,7 @@ dfp_getUsersByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' Performs actions on User objects that match the given Statement query.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/UserService#performUserAction}{Google Documentation for performUserAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/UserService#performUserAction}{Google Documentation for performUserAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -129,6 +133,7 @@ dfp_getUsersByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' \dontrun{
 #'  res <- dfp_performUserAction(request_data)
 #' }
+
 #' @export
 dfp_performUserAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='UserService', root_name='performUserAction', data=request_data)
@@ -141,7 +146,7 @@ dfp_performUserAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' Updates the specified User objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/UserService#updateUsers}{Google Documentation for updateUsers}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/UserService#updateUsers}{Google Documentation for updateUsers}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -154,6 +159,7 @@ dfp_performUserAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' \dontrun{
 #'  res <- dfp_updateUsers(request_data)
 #' }
+
 #' @export
 dfp_updateUsers <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='UserService', root_name='updateUsers', data=request_data)

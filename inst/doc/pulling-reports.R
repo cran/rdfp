@@ -43,18 +43,18 @@ report_data[,c('Dimension.MONTH_AND_YEAR', 'Dimension.AD_UNIT_ID', 'Column.AD_SE
 # look for a particular saved query
 request_data <- list(filterStatement=list(query="WHERE id = 936165016"))
 this_result <- dfp_getSavedQueriesByStatement(request_data, as_df=FALSE)
-this_report_query <- this_result[[1]]$reportQuery
+this_report_query <- this_result$reportQuery
 
 # resubmit the report job with the saved query
-report_data <- list(reportJob=list(reportQuery = this_report_query))
-report_data <- dfp_full_report_wrapper(report_data)
+request_data <- list(reportJob=list(reportQuery = this_report_query))
+report_data <- dfp_full_report_wrapper(request_data)
 report_data[,c('Dimension.AD_UNIT_ID', 'Column.AD_SERVER_CLICKS')]
 
 ## ----pulling-report-long-------------------------------------------------
 # In order to run a report you must specify how the report should be structured 
 # by specifying a reportQuery inside a reportJob. All of the dimensions, columns, 
 # date range options, etc. are documented at:
-# https://developers.google.com/ad-manager/api/reference/v201811/ReportService.ReportQuery
+# https://developers.google.com/ad-manager/api/reference/v201905/ReportService.ReportQuery
 request_data <- list(reportJob=list(reportQuery=list(dimensions='MONTH_AND_YEAR', 
                                                      dimensions='AD_UNIT_ID',
                                                      adUnitView='FLAT',
@@ -68,25 +68,25 @@ dfp_runReportJob_result$id
 
 # to check the status repeatedly you just need to provide the id
 # dfp_getReportJobStatus_result returns a character string of the reportJob status
-request_data <- list(reportJobId=dfp_runReportJob_result$id)
-dfp_getReportJobStatus_result <- dfp_getReportJobStatus(request_data)
+request_data <- list(reportJobId = dfp_runReportJob_result$id)
+dfp_getReportJobStatus_result <- dfp_getReportJobStatus(request_data, as_df = FALSE)
 dfp_getReportJobStatus_result
 
 # a simple while loop can keep checking a long running request until ready
 counter <- 0
-while(dfp_getReportJobStatus_result$V1 != 'COMPLETED' & counter < 10){
-  dfp_getReportJobStatus_result <- dfp_getReportJobStatus(request_data)
+while(dfp_getReportJobStatus_result != 'COMPLETED' & counter < 10){
+  dfp_getReportJobStatus_result <- dfp_getReportJobStatus(request_data, as_df = FALSE)
   Sys.sleep(3)
   counter <- counter + 1
 }
 
 # once the status is "COMPLETED" the data download URL can be retrieved
 request_data <- list(reportJobId=dfp_runReportJob_result$id, exportFormat='CSV_DUMP')
-dfp_getReportDownloadURL_result <- dfp_getReportDownloadURL(request_data)
+dfp_getReportDownloadURL_result <- dfp_getReportDownloadURL(request_data, as_df = FALSE)
 
 # this function has been provided to download the data from URL and convert to a tbl_df
 # supported exportFormats are currently c('CSV_DUMP', 'TSV', 'TSV_EXCEL')
-report_data <- dfp_report_url_to_dataframe(report_url=dfp_getReportDownloadURL_result$V1, 
-                                           exportFormat='CSV_DUMP')
+report_data <- dfp_report_url_to_dataframe(report_url = dfp_getReportDownloadURL_result, 
+                                           exportFormat = 'CSV_DUMP')
 report_data[,c('Dimension.MONTH_AND_YEAR', 'Dimension.AD_UNIT_ID', 'Column.AD_SERVER_CLICKS')]
 

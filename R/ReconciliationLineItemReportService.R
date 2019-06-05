@@ -15,7 +15,7 @@
 #'   \item{proposalLineItemId}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ReconciliationLineItemReportService#getReconciliationLineItemReportsByStatement}{Google Documentation for getReconciliationLineItemReportsByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ReconciliationLineItemReportService#getReconciliationLineItemReportsByStatement}{Google Documentation for getReconciliationLineItemReportsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -29,6 +29,7 @@
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getReconciliationLineItemReportsByStatement(dat)
 #' }
+
 #' @export
 dfp_getReconciliationLineItemReportsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ReconciliationLineItemReportService', root_name='getReconciliationLineItemReportsByStatement', data=request_data)
@@ -41,7 +42,7 @@ dfp_getReconciliationLineItemReportsByStatement <- function(request_data, as_df=
 #' 
 #' Updates a list of ReconciliationLineItemReport objects which belong to same ReconciliationReport.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ReconciliationLineItemReportService#updateReconciliationLineItemReports}{Google Documentation for updateReconciliationLineItemReports}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ReconciliationLineItemReportService#updateReconciliationLineItemReports}{Google Documentation for updateReconciliationLineItemReports}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -54,6 +55,7 @@ dfp_getReconciliationLineItemReportsByStatement <- function(request_data, as_df=
 #' \dontrun{
 #'  res <- dfp_updateReconciliationLineItemReports(request_data)
 #' }
+
 #' @export
 dfp_updateReconciliationLineItemReports <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ReconciliationLineItemReportService', root_name='updateReconciliationLineItemReports', data=request_data)

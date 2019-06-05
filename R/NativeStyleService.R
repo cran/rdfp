@@ -6,7 +6,7 @@
 #' 
 #' Creates new NativeStyle objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/NativeStyleService#createNativeStyles}{Google Documentation for createNativeStyles}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/NativeStyleService#createNativeStyles}{Google Documentation for createNativeStyles}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -19,6 +19,7 @@
 #' \dontrun{
 #'  res <- dfp_createNativeStyles(request_data)
 #' }
+
 #' @export
 dfp_createNativeStyles <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='NativeStyleService', root_name='createNativeStyles', data=request_data)
@@ -35,7 +36,7 @@ dfp_createNativeStyles <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{name}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/NativeStyleService#getNativeStylesByStatement}{Google Documentation for getNativeStylesByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/NativeStyleService#getNativeStylesByStatement}{Google Documentation for getNativeStylesByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -49,6 +50,7 @@ dfp_createNativeStyles <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getNativeStylesByStatement(dat)
 #' }
+
 #' @export
 dfp_getNativeStylesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='NativeStyleService', root_name='getNativeStylesByStatement', data=request_data)
@@ -61,7 +63,7 @@ dfp_getNativeStylesByStatement <- function(request_data, as_df=TRUE, verbose=FAL
 #' 
 #' Performs actions on NativeStyle native styles that match the given Statement.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/NativeStyleService#performNativeStyleAction}{Google Documentation for performNativeStyleAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/NativeStyleService#performNativeStyleAction}{Google Documentation for performNativeStyleAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -74,6 +76,7 @@ dfp_getNativeStylesByStatement <- function(request_data, as_df=TRUE, verbose=FAL
 #' \dontrun{
 #'  res <- dfp_performNativeStyleAction(request_data)
 #' }
+
 #' @export
 dfp_performNativeStyleAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='NativeStyleService', root_name='performNativeStyleAction', data=request_data)
@@ -86,7 +89,7 @@ dfp_performNativeStyleAction <- function(request_data, as_df=TRUE, verbose=FALSE
 #' 
 #' Updates the specified NativeStyle objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/NativeStyleService#updateNativeStyles}{Google Documentation for updateNativeStyles}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/NativeStyleService#updateNativeStyles}{Google Documentation for updateNativeStyles}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -99,6 +102,7 @@ dfp_performNativeStyleAction <- function(request_data, as_df=TRUE, verbose=FALSE
 #' \dontrun{
 #'  res <- dfp_updateNativeStyles(request_data)
 #' }
+
 #' @export
 dfp_updateNativeStyles <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='NativeStyleService', root_name='updateNativeStyles', data=request_data)

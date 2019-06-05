@@ -6,7 +6,7 @@
 #' 
 #' Creates a new CreativeSet.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CreativeSetService#createCreativeSet}{Google Documentation for createCreativeSet}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/CreativeSetService#createCreativeSet}{Google Documentation for createCreativeSet}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -19,6 +19,7 @@
 #' \dontrun{
 #'  res <- dfp_createCreativeSet(request_data)
 #' }
+
 #' @export
 dfp_createCreativeSet <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CreativeSetService', root_name='createCreativeSet', data=request_data)
@@ -37,7 +38,7 @@ dfp_createCreativeSet <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{lastModifiedDateTime}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CreativeSetService#getCreativeSetsByStatement}{Google Documentation for getCreativeSetsByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/CreativeSetService#getCreativeSetsByStatement}{Google Documentation for getCreativeSetsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -51,6 +52,7 @@ dfp_createCreativeSet <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getCreativeSetsByStatement(dat)
 #' }
+
 #' @export
 dfp_getCreativeSetsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CreativeSetService', root_name='getCreativeSetsByStatement', data=request_data)
@@ -63,7 +65,7 @@ dfp_getCreativeSetsByStatement <- function(request_data, as_df=TRUE, verbose=FAL
 #' 
 #' Updates the specified CreativeSet.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CreativeSetService#updateCreativeSet}{Google Documentation for updateCreativeSet}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/CreativeSetService#updateCreativeSet}{Google Documentation for updateCreativeSet}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -76,6 +78,7 @@ dfp_getCreativeSetsByStatement <- function(request_data, as_df=TRUE, verbose=FAL
 #' \dontrun{
 #'  res <- dfp_updateCreativeSet(request_data)
 #' }
+
 #' @export
 dfp_updateCreativeSet <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CreativeSetService', root_name='updateCreativeSet', data=request_data)

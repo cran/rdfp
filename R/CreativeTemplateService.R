@@ -12,7 +12,7 @@
 #'   \item{status}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CreativeTemplateService#getCreativeTemplatesByStatement}{Google Documentation for getCreativeTemplatesByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/CreativeTemplateService#getCreativeTemplatesByStatement}{Google Documentation for getCreativeTemplatesByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -26,6 +26,7 @@
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getCreativeTemplatesByStatement(dat)
 #' }
+
 #' @export
 dfp_getCreativeTemplatesByStatement <- function(request_data, as_df=FALSE, verbose=FALSE){
   request_body <- form_request_body(service='CreativeTemplateService', root_name='getCreativeTemplatesByStatement', data=request_data)

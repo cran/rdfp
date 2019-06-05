@@ -7,7 +7,7 @@
 #' 
 #' Creates new CdnConfiguration objects. Creates new CdnConfiguration objects. Creates new CdnConfiguration objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CdnConfigurationService#createCdnConfigurations}{Google Documentation for createCdnConfigurations}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/CdnConfigurationService#createCdnConfigurations}{Google Documentation for createCdnConfigurations}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -20,6 +20,7 @@
 #' \dontrun{
 #'  res <- dfp_createCdnConfigurations(request_data)
 #' }
+
 #' @export
 dfp_createCdnConfigurations <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CdnConfigurationService', root_name='createCdnConfigurations', data=request_data)
@@ -36,7 +37,7 @@ dfp_createCdnConfigurations <- function(request_data, as_df=TRUE, verbose=FALSE)
 #'   \item{name}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CdnConfigurationService#getCdnConfigurationsByStatement}{Google Documentation for getCdnConfigurationsByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/CdnConfigurationService#getCdnConfigurationsByStatement}{Google Documentation for getCdnConfigurationsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -50,6 +51,7 @@ dfp_createCdnConfigurations <- function(request_data, as_df=TRUE, verbose=FALSE)
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getCdnConfigurationsByStatement(dat)
 #' }
+
 #' @export
 dfp_getCdnConfigurationsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CdnConfigurationService', root_name='getCdnConfigurationsByStatement', data=request_data)
@@ -62,7 +64,7 @@ dfp_getCdnConfigurationsByStatement <- function(request_data, as_df=TRUE, verbos
 #' 
 #' Performs actions on CdnConfiguration objects that match the given \{@@link Statement query\}.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CdnConfigurationService#performCdnConfigurationAction}{Google Documentation for performCdnConfigurationAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/CdnConfigurationService#performCdnConfigurationAction}{Google Documentation for performCdnConfigurationAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -75,6 +77,7 @@ dfp_getCdnConfigurationsByStatement <- function(request_data, as_df=TRUE, verbos
 #' \dontrun{
 #'  res <- dfp_performCdnConfigurationAction(request_data)
 #' }
+
 #' @export
 dfp_performCdnConfigurationAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CdnConfigurationService', root_name='performCdnConfigurationAction', data=request_data)
@@ -87,7 +90,7 @@ dfp_performCdnConfigurationAction <- function(request_data, as_df=TRUE, verbose=
 #' 
 #' Updates the specified CdnConfiguration objects. Updates the specified CdnConfiguration objects. Updates the specified CdnConfiguration objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CdnConfigurationService#updateCdnConfigurations}{Google Documentation for updateCdnConfigurations}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/CdnConfigurationService#updateCdnConfigurations}{Google Documentation for updateCdnConfigurations}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -100,6 +103,7 @@ dfp_performCdnConfigurationAction <- function(request_data, as_df=TRUE, verbose=
 #' \dontrun{
 #'  res <- dfp_updateCdnConfigurations(request_data)
 #' }
+
 #' @export
 dfp_updateCdnConfigurations <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CdnConfigurationService', root_name='updateCdnConfigurations', data=request_data)

@@ -6,7 +6,7 @@
 #' 
 #' Creates new Label objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/LabelService#createLabels}{Google Documentation for createLabels}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/LabelService#createLabels}{Google Documentation for createLabels}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -24,6 +24,7 @@
 #' request_data <- list('labels'=hypothetical_label)
 #' result <- dfp_createLabels(request_data)
 #' }
+
 #' @export
 dfp_createLabels <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LabelService', root_name='createLabels', data=request_data)
@@ -43,7 +44,7 @@ dfp_createLabels <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{isActive}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/LabelService#getLabelsByStatement}{Google Documentation for getLabelsByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/LabelService#getLabelsByStatement}{Google Documentation for getLabelsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -57,6 +58,7 @@ dfp_createLabels <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getLabelsByStatement(dat)
 #' }
+
 #' @export
 dfp_getLabelsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LabelService', root_name='getLabelsByStatement', data=request_data)
@@ -69,7 +71,7 @@ dfp_getLabelsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' Performs actions on Label objects that match the given Statement query.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/LabelService#performLabelAction}{Google Documentation for performLabelAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/LabelService#performLabelAction}{Google Documentation for performLabelAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -82,6 +84,7 @@ dfp_getLabelsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' \dontrun{
 #'  res <- dfp_performLabelAction(request_data)
 #' }
+
 #' @export
 dfp_performLabelAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LabelService', root_name='performLabelAction', data=request_data)
@@ -94,7 +97,7 @@ dfp_performLabelAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' Updates the specified Label objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/LabelService#updateLabels}{Google Documentation for updateLabels}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/LabelService#updateLabels}{Google Documentation for updateLabels}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -107,6 +110,7 @@ dfp_performLabelAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' \dontrun{
 #'  res <- dfp_updateLabels(request_data)
 #' }
+
 #' @export
 dfp_updateLabels <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LabelService', root_name='updateLabels', data=request_data)

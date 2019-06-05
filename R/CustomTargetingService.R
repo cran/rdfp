@@ -11,7 +11,7 @@
 #'   \item{CustomTargetingKey type}
 #' } 
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CustomTargetingService#createCustomTargetingKeys}{Google Documentation for createCustomTargetingKeys}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/CustomTargetingService#createCustomTargetingKeys}{Google Documentation for createCustomTargetingKeys}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -27,6 +27,7 @@
 #'                                type='FREEFORM'))
 #' result <- dfp_createCustomTargetingKeys(request_data)
 #' }
+
 #' @export
 dfp_createCustomTargetingKeys <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomTargetingService', root_name='createCustomTargetingKeys', data=request_data)
@@ -43,7 +44,7 @@ dfp_createCustomTargetingKeys <- function(request_data, as_df=TRUE, verbose=FALS
 #'   \item{CustomTargetingValue name}
 #' } 
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CustomTargetingService#createCustomTargetingValues}{Google Documentation for createCustomTargetingValues}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/CustomTargetingService#createCustomTargetingValues}{Google Documentation for createCustomTargetingValues}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -60,6 +61,7 @@ dfp_createCustomTargetingKeys <- function(request_data, as_df=TRUE, verbose=FALS
 #'                            matchType=rep('EXACT', 2))
 #' result <- dfp_createCustomTargetingValues(request_data)
 #' }
+
 #' @export
 dfp_createCustomTargetingValues <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomTargetingService', root_name='createCustomTargetingValues', data=request_data)
@@ -79,7 +81,7 @@ dfp_createCustomTargetingValues <- function(request_data, as_df=TRUE, verbose=FA
 #'   \item{type}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CustomTargetingService#getCustomTargetingKeysByStatement}{Google Documentation for getCustomTargetingKeysByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/CustomTargetingService#getCustomTargetingKeysByStatement}{Google Documentation for getCustomTargetingKeysByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -93,6 +95,7 @@ dfp_createCustomTargetingValues <- function(request_data, as_df=TRUE, verbose=FA
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getCustomTargetingKeysByStatement(dat)
 #' }
+
 #' @export
 dfp_getCustomTargetingKeysByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomTargetingService', root_name='getCustomTargetingKeysByStatement', data=request_data)
@@ -112,7 +115,7 @@ dfp_getCustomTargetingKeysByStatement <- function(request_data, as_df=TRUE, verb
 #'   \item{matchType}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CustomTargetingService#getCustomTargetingValuesByStatement}{Google Documentation for getCustomTargetingValuesByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/CustomTargetingService#getCustomTargetingValuesByStatement}{Google Documentation for getCustomTargetingValuesByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -126,6 +129,7 @@ dfp_getCustomTargetingKeysByStatement <- function(request_data, as_df=TRUE, verb
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getCustomTargetingValuesByStatement(dat)
 #' }
+
 #' @export
 dfp_getCustomTargetingValuesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomTargetingService', root_name='getCustomTargetingValuesByStatement', data=request_data)
@@ -138,7 +142,7 @@ dfp_getCustomTargetingValuesByStatement <- function(request_data, as_df=TRUE, ve
 #' 
 #' Performs actions on CustomTargetingKey objects that match the given Statement query.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CustomTargetingService#performCustomTargetingKeyAction}{Google Documentation for performCustomTargetingKeyAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/CustomTargetingService#performCustomTargetingKeyAction}{Google Documentation for performCustomTargetingKeyAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -151,6 +155,7 @@ dfp_getCustomTargetingValuesByStatement <- function(request_data, as_df=TRUE, ve
 #' \dontrun{
 #'  res <- dfp_performCustomTargetingKeyAction(request_data)
 #' }
+
 #' @export
 dfp_performCustomTargetingKeyAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomTargetingService', root_name='performCustomTargetingKeyAction', data=request_data)
@@ -163,7 +168,7 @@ dfp_performCustomTargetingKeyAction <- function(request_data, as_df=TRUE, verbos
 #' 
 #' Performs actions on CustomTargetingValue objects that match the given Statement query.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CustomTargetingService#performCustomTargetingValueAction}{Google Documentation for performCustomTargetingValueAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/CustomTargetingService#performCustomTargetingValueAction}{Google Documentation for performCustomTargetingValueAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -176,6 +181,7 @@ dfp_performCustomTargetingKeyAction <- function(request_data, as_df=TRUE, verbos
 #' \dontrun{
 #'  res <- dfp_performCustomTargetingValueAction(request_data)
 #' }
+
 #' @export
 dfp_performCustomTargetingValueAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomTargetingService', root_name='performCustomTargetingValueAction', data=request_data)
@@ -188,7 +194,7 @@ dfp_performCustomTargetingValueAction <- function(request_data, as_df=TRUE, verb
 #' 
 #' Updates the specified CustomTargetingKey objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CustomTargetingService#updateCustomTargetingKeys}{Google Documentation for updateCustomTargetingKeys}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/CustomTargetingService#updateCustomTargetingKeys}{Google Documentation for updateCustomTargetingKeys}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -201,6 +207,7 @@ dfp_performCustomTargetingValueAction <- function(request_data, as_df=TRUE, verb
 #' \dontrun{
 #'  res <- dfp_updateCustomTargetingKeys(request_data)
 #' }
+
 #' @export
 dfp_updateCustomTargetingKeys <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomTargetingService', root_name='updateCustomTargetingKeys', data=request_data)
@@ -213,7 +220,7 @@ dfp_updateCustomTargetingKeys <- function(request_data, as_df=TRUE, verbose=FALS
 #' 
 #' Updates the specified CustomTargetingValue objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CustomTargetingService#updateCustomTargetingValues}{Google Documentation for updateCustomTargetingValues}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/CustomTargetingService#updateCustomTargetingValues}{Google Documentation for updateCustomTargetingValues}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -226,6 +233,7 @@ dfp_updateCustomTargetingKeys <- function(request_data, as_df=TRUE, verbose=FALS
 #' \dontrun{
 #'  res <- dfp_updateCustomTargetingValues(request_data)
 #' }
+
 #' @export
 dfp_updateCustomTargetingValues <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomTargetingService', root_name='updateCustomTargetingValues', data=request_data)

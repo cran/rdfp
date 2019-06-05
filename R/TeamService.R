@@ -12,7 +12,7 @@
 #'   \item{Team name}
 #' } 
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/TeamService#createTeams}{Google Documentation for createTeams}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/TeamService#createTeams}{Google Documentation for createTeams}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -30,6 +30,7 @@
 #'                                 teamAccessType='READ_WRITE'))
 #' result <- dfp_createTeams(request_data)
 #' }
+
 #' @export
 dfp_createTeams <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='TeamService', root_name='createTeams', data=request_data)
@@ -47,7 +48,7 @@ dfp_createTeams <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{description}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/TeamService#getTeamsByStatement}{Google Documentation for getTeamsByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/TeamService#getTeamsByStatement}{Google Documentation for getTeamsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -61,6 +62,7 @@ dfp_createTeams <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getTeamsByStatement(dat)
 #' }
+
 #' @export
 dfp_getTeamsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='TeamService', root_name='getTeamsByStatement', data=request_data)
@@ -73,7 +75,7 @@ dfp_getTeamsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' Performs actions on Team objects that match the given Statement query.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/TeamService#performTeamAction}{Google Documentation for performTeamAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/TeamService#performTeamAction}{Google Documentation for performTeamAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -86,6 +88,7 @@ dfp_getTeamsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' \dontrun{
 #'  res <- dfp_performTeamAction(request_data)
 #' }
+
 #' @export
 dfp_performTeamAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='TeamService', root_name='performTeamAction', data=request_data)
@@ -98,7 +101,7 @@ dfp_performTeamAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' Updates the specified Team objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/TeamService#updateTeams}{Google Documentation for updateTeams}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/TeamService#updateTeams}{Google Documentation for updateTeams}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -111,6 +114,7 @@ dfp_performTeamAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' \dontrun{
 #'  res <- dfp_updateTeams(request_data)
 #' }
+
 #' @export
 dfp_updateTeams <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='TeamService', root_name='updateTeams', data=request_data)

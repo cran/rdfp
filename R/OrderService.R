@@ -11,7 +11,7 @@
 #' 
 #' Creates new Order objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/OrderService#createOrders}{Google Documentation for createOrders}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/OrderService#createOrders}{Google Documentation for createOrders}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -42,6 +42,7 @@
 #'                           traffickerId=dfp_getCurrentUser()$id))
 #' dfp_createOrders_result <- dfp_createOrders(request_data)
 #' }
+
 #' @export
 dfp_createOrders <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='OrderService', root_name='createOrders', data=request_data)
@@ -65,7 +66,7 @@ dfp_createOrders <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{lastModifiedDateTime}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/OrderService#getOrdersByStatement}{Google Documentation for getOrdersByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/OrderService#getOrdersByStatement}{Google Documentation for getOrdersByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -79,6 +80,7 @@ dfp_createOrders <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getOrdersByStatement(dat)
 #' }
+
 #' @export
 dfp_getOrdersByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='OrderService', root_name='getOrdersByStatement', data=request_data)
@@ -91,7 +93,7 @@ dfp_getOrdersByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' Performs actions on Order objects that match the given Statement query.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/OrderService#performOrderAction}{Google Documentation for performOrderAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/OrderService#performOrderAction}{Google Documentation for performOrderAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -104,6 +106,7 @@ dfp_getOrdersByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' \dontrun{
 #'  res <- dfp_performOrderAction(request_data)
 #' }
+
 #' @export
 dfp_performOrderAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='OrderService', root_name='performOrderAction', data=request_data)
@@ -116,7 +119,7 @@ dfp_performOrderAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' Updates the specified Order objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/OrderService#updateOrders}{Google Documentation for updateOrders}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/OrderService#updateOrders}{Google Documentation for updateOrders}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -129,6 +132,7 @@ dfp_performOrderAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' \dontrun{
 #'  res <- dfp_updateOrders(request_data)
 #' }
+
 #' @export
 dfp_updateOrders <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='OrderService', root_name='updateOrders', data=request_data)

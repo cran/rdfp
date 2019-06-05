@@ -6,15 +6,15 @@
 #' Products allow inventory managers to control what salespeople can sell.
 #'
 #' To use this service, you need to have the new sales management solution
-#' enabled on your network. If you do not see a "Sales" tab in
-#' \href{https://www.google.com/dfp}{DoubleClick for Publishers (DFP)}, you
+#' enabled on your network. If you do not see a "Sales" tab in <a
+#' href="https://www.google.com/dfp">DoubleClick for Publishers (DFP)</a>, you
 #' will not be able to use this service.
 #' 
 #' createProductTemplates
 #' 
 #' Creates new ProductTemplate objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ProductTemplateService#createProductTemplates}{Google Documentation for createProductTemplates}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ProductTemplateService#createProductTemplates}{Google Documentation for createProductTemplates}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -27,6 +27,7 @@
 #' \dontrun{
 #'  res <- dfp_createProductTemplates(request_data)
 #' }
+
 #' @export
 dfp_createProductTemplates <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProductTemplateService', root_name='createProductTemplates', data=request_data)
@@ -50,7 +51,7 @@ dfp_createProductTemplates <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{rateType}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ProductTemplateService#getProductTemplatesByStatement}{Google Documentation for getProductTemplatesByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ProductTemplateService#getProductTemplatesByStatement}{Google Documentation for getProductTemplatesByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -64,6 +65,7 @@ dfp_createProductTemplates <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getProductTemplatesByStatement(dat)
 #' }
+
 #' @export
 dfp_getProductTemplatesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProductTemplateService', root_name='getProductTemplatesByStatement', data=request_data)
@@ -76,7 +78,7 @@ dfp_getProductTemplatesByStatement <- function(request_data, as_df=TRUE, verbose
 #' 
 #' Performs action on ProductTemplate objects that satisfy the given Statement query.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ProductTemplateService#performProductTemplateAction}{Google Documentation for performProductTemplateAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ProductTemplateService#performProductTemplateAction}{Google Documentation for performProductTemplateAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -89,6 +91,7 @@ dfp_getProductTemplatesByStatement <- function(request_data, as_df=TRUE, verbose
 #' \dontrun{
 #'  res <- dfp_performProductTemplateAction(request_data)
 #' }
+
 #' @export
 dfp_performProductTemplateAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProductTemplateService', root_name='performProductTemplateAction', data=request_data)
@@ -101,7 +104,7 @@ dfp_performProductTemplateAction <- function(request_data, as_df=TRUE, verbose=F
 #' 
 #' Updates the specified ProductTemplate objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ProductTemplateService#updateProductTemplates}{Google Documentation for updateProductTemplates}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ProductTemplateService#updateProductTemplates}{Google Documentation for updateProductTemplates}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -114,6 +117,7 @@ dfp_performProductTemplateAction <- function(request_data, as_df=TRUE, verbose=F
 #' \dontrun{
 #'  res <- dfp_updateProductTemplates(request_data)
 #' }
+
 #' @export
 dfp_updateProductTemplates <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProductTemplateService', root_name='updateProductTemplates', data=request_data)

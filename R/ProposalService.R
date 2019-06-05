@@ -9,7 +9,7 @@
 #'   \item{Proposal name}
 #' } 
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ProposalService#createProposals}{Google Documentation for createProposals}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ProposalService#createProposals}{Google Documentation for createProposals}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -22,6 +22,7 @@
 #' \dontrun{
 #'  res <- dfp_createProposals(request_data)
 #' }
+
 #' @export
 dfp_createProposals <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProposalService', root_name='createProposals', data=request_data)
@@ -37,7 +38,7 @@ dfp_createProposals <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{proposalId}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ProposalService#getMarketplaceCommentsByStatement}{Google Documentation for getMarketplaceCommentsByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ProposalService#getMarketplaceCommentsByStatement}{Google Documentation for getMarketplaceCommentsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -51,6 +52,7 @@ dfp_createProposals <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getMarketplaceCommentsByStatement(dat)
 #' }
+
 #' @export
 dfp_getMarketplaceCommentsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProposalService', root_name='getMarketplaceCommentsByStatement', data=request_data)
@@ -77,7 +79,7 @@ dfp_getMarketplaceCommentsByStatement <- function(request_data, as_df=TRUE, verb
 #'   \item{negotiationStatus Only applicable for programmatic proposals}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ProposalService#getProposalsByStatement}{Google Documentation for getProposalsByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ProposalService#getProposalsByStatement}{Google Documentation for getProposalsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -91,6 +93,7 @@ dfp_getMarketplaceCommentsByStatement <- function(request_data, as_df=TRUE, verb
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getProposalsByStatement(dat)
 #' }
+
 #' @export
 dfp_getProposalsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProposalService', root_name='getProposalsByStatement', data=request_data)
@@ -108,7 +111,7 @@ dfp_getProposalsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE)
 #'   \item{Proposal primaryTraffickerId}
 #' } 
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ProposalService#performProposalAction}{Google Documentation for performProposalAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ProposalService#performProposalAction}{Google Documentation for performProposalAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -121,6 +124,7 @@ dfp_getProposalsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE)
 #' \dontrun{
 #'  res <- dfp_performProposalAction(request_data)
 #' }
+
 #' @export
 dfp_performProposalAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProposalService', root_name='performProposalAction', data=request_data)
@@ -133,7 +137,7 @@ dfp_performProposalAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' Updates the specified Proposal objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ProposalService#updateProposals}{Google Documentation for updateProposals}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ProposalService#updateProposals}{Google Documentation for updateProposals}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -146,6 +150,7 @@ dfp_performProposalAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' \dontrun{
 #'  res <- dfp_updateProposals(request_data)
 #' }
+
 #' @export
 dfp_updateProposals <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProposalService', root_name='updateProposals', data=request_data)

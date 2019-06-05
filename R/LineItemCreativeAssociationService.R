@@ -17,7 +17,7 @@
 #' 
 #' Creates new LineItemCreativeAssociation objects
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/LineItemCreativeAssociationService#createLineItemCreativeAssociations}{Google Documentation for createLineItemCreativeAssociations}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/LineItemCreativeAssociationService#createLineItemCreativeAssociations}{Google Documentation for createLineItemCreativeAssociations}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -30,6 +30,7 @@
 #' \dontrun{
 #'  res <- dfp_createLineItemCreativeAssociations(request_data)
 #' }
+
 #' @export
 dfp_createLineItemCreativeAssociations <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LineItemCreativeAssociationService', root_name='createLineItemCreativeAssociations', data=request_data)
@@ -50,7 +51,7 @@ dfp_createLineItemCreativeAssociations <- function(request_data, as_df=TRUE, ver
 #'   \item{lastModifiedDateTime}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/LineItemCreativeAssociationService#getLineItemCreativeAssociationsByStatement}{Google Documentation for getLineItemCreativeAssociationsByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/LineItemCreativeAssociationService#getLineItemCreativeAssociationsByStatement}{Google Documentation for getLineItemCreativeAssociationsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -64,6 +65,7 @@ dfp_createLineItemCreativeAssociations <- function(request_data, as_df=TRUE, ver
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getLineItemCreativeAssociationsByStatement(dat)
 #' }
+
 #' @export
 dfp_getLineItemCreativeAssociationsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LineItemCreativeAssociationService', root_name='getLineItemCreativeAssociationsByStatement', data=request_data)
@@ -76,7 +78,7 @@ dfp_getLineItemCreativeAssociationsByStatement <- function(request_data, as_df=T
 #' 
 #' Returns an insite preview URL that references the specified site URL with the specified creative from the association served to it. For Creative Set previewing you may specify the master creative Id.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/LineItemCreativeAssociationService#getPreviewUrl}{Google Documentation for getPreviewUrl}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/LineItemCreativeAssociationService#getPreviewUrl}{Google Documentation for getPreviewUrl}
 #' 
 #' @param as_df a boolean indicating whether to attempt to parse the result into
 #' a \code{data.frame}
@@ -86,6 +88,7 @@ dfp_getLineItemCreativeAssociationsByStatement <- function(request_data, as_df=T
 #' \dontrun{
 #'  res <- dfp_getPreviewUrl()
 #' }
+
 #' @export
 dfp_getPreviewUrl <- function(as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LineItemCreativeAssociationService', root_name='getPreviewUrl', data=NULL)
@@ -98,7 +101,7 @@ dfp_getPreviewUrl <- function(as_df=TRUE, verbose=FALSE){
 #' 
 #' Returns a list of URLs that reference the specified site URL with the specified creative from the association served to it. For Creative Set previewing you may specify the master creative Id. Each URL corresponds to one available native style for previewing the specified creative. creative
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/LineItemCreativeAssociationService#getPreviewUrlsForNativeStyles}{Google Documentation for getPreviewUrlsForNativeStyles}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/LineItemCreativeAssociationService#getPreviewUrlsForNativeStyles}{Google Documentation for getPreviewUrlsForNativeStyles}
 #' 
 #' @param as_df a boolean indicating whether to attempt to parse the result into
 #' a \code{data.frame}
@@ -108,6 +111,7 @@ dfp_getPreviewUrl <- function(as_df=TRUE, verbose=FALSE){
 #' \dontrun{
 #'  res <- dfp_getPreviewUrlsForNativeStyles()
 #' }
+
 #' @export
 dfp_getPreviewUrlsForNativeStyles <- function(as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LineItemCreativeAssociationService', root_name='getPreviewUrlsForNativeStyles', data=NULL)
@@ -120,7 +124,7 @@ dfp_getPreviewUrlsForNativeStyles <- function(as_df=TRUE, verbose=FALSE){
 #' 
 #' Performs actions on LineItemCreativeAssociation objects that match the given Statement query.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/LineItemCreativeAssociationService#performLineItemCreativeAssociationAction}{Google Documentation for performLineItemCreativeAssociationAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/LineItemCreativeAssociationService#performLineItemCreativeAssociationAction}{Google Documentation for performLineItemCreativeAssociationAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -133,6 +137,7 @@ dfp_getPreviewUrlsForNativeStyles <- function(as_df=TRUE, verbose=FALSE){
 #' \dontrun{
 #'  res <- dfp_performLineItemCreativeAssociationAction(request_data)
 #' }
+
 #' @export
 dfp_performLineItemCreativeAssociationAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LineItemCreativeAssociationService', root_name='performLineItemCreativeAssociationAction', data=request_data)
@@ -145,7 +150,7 @@ dfp_performLineItemCreativeAssociationAction <- function(request_data, as_df=TRU
 #' 
 #' Updates the specified LineItemCreativeAssociation objects
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/LineItemCreativeAssociationService#updateLineItemCreativeAssociations}{Google Documentation for updateLineItemCreativeAssociations}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/LineItemCreativeAssociationService#updateLineItemCreativeAssociations}{Google Documentation for updateLineItemCreativeAssociations}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -158,6 +163,7 @@ dfp_performLineItemCreativeAssociationAction <- function(request_data, as_df=TRU
 #' \dontrun{
 #'  res <- dfp_updateLineItemCreativeAssociations(request_data)
 #' }
+
 #' @export
 dfp_updateLineItemCreativeAssociations <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LineItemCreativeAssociationService', root_name='updateLineItemCreativeAssociations', data=request_data)

@@ -27,7 +27,7 @@
 #' Returns the URL at which the report file can be downloaded.
 #' The report will be generated as a gzip archive, containing the report file itself.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ReportService#getReportDownloadURL}{Google Documentation for getReportDownloadURL}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ReportService#getReportDownloadURL}{Google Documentation for getReportDownloadURL}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -53,8 +53,9 @@
 #' request_data <- list(reportJobId=dfp_runReportJob_result$id, exportFormat='CSV_DUMP')
 #' dfp_getReportDownloadURL_result <- dfp_getReportDownloadURL(request_data)
 #' }
+
 #' @export
-dfp_getReportDownloadURL <- function(request_data, as_df=TRUE, verbose=FALSE){
+dfp_getReportDownloadURL <- function(request_data, as_df=FALSE, verbose=FALSE){
   request_body <- form_request_body(service='ReportService', root_name='getReportDownloadURL', data=request_data)
   httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
   result <- parse_soap_response(httr_response=httr_response, resp_element='getReportDownloadURLResponse', as_df=as_df)
@@ -66,7 +67,7 @@ dfp_getReportDownloadURL <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' Returns the URL at which the report file can be downloaded, and allows for customization of the downloaded report.
 #' By default, the report will be generated as a gzip archive, containing the report file itself. This can be changed by setting ReportDownloadOptions useGzipCompression to false.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ReportService#getReportDownloadUrlWithOptions}{Google Documentation for getReportDownloadUrlWithOptions}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ReportService#getReportDownloadUrlWithOptions}{Google Documentation for getReportDownloadUrlWithOptions}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -79,8 +80,9 @@ dfp_getReportDownloadURL <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' \dontrun{
 #'  res <- dfp_getReportDownloadUrlWithOptions(request_data)
 #' }
+
 #' @export
-dfp_getReportDownloadUrlWithOptions <- function(request_data, as_df=TRUE, verbose=FALSE){
+dfp_getReportDownloadUrlWithOptions <- function(request_data, as_df=FALSE, verbose=FALSE){
   request_body <- form_request_body(service='ReportService', root_name='getReportDownloadUrlWithOptions', data=request_data)
   httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
   result <- parse_soap_response(httr_response=httr_response, resp_element='getReportDownloadUrlWithOptionsResponse', as_df=as_df)
@@ -91,7 +93,7 @@ dfp_getReportDownloadUrlWithOptions <- function(request_data, as_df=TRUE, verbos
 #' 
 #' Returns the ReportJobStatus of the report job with the specified ID. Returns the ReportJobStatus of the report job with the specified ID. Returns the ReportJobStatus of the report job with the specified ID.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ReportService#getReportJobStatus}{Google Documentation for getReportJobStatus}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ReportService#getReportJobStatus}{Google Documentation for getReportJobStatus}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -119,14 +121,15 @@ dfp_getReportDownloadUrlWithOptions <- function(request_data, as_df=TRUE, verbos
 #' 
 #' # a simple while loop can keep checking a long running request until ready
 #' counter <- 0
-#' while(dfp_getReportJobStatus_result$V1 != 'COMPLETED' & counter < 10){
+#' while(dfp_getReportJobStatus_result != 'COMPLETED' & counter < 10){
 #'   dfp_getReportJobStatus_result <- dfp_getReportJobStatus(request_data)
 #'   Sys.sleep(3)
 #'   counter <- counter + 1
 #' }
 #' }
+
 #' @export
-dfp_getReportJobStatus <- function(request_data, as_df=TRUE, verbose=FALSE){
+dfp_getReportJobStatus <- function(request_data, as_df=FALSE, verbose=FALSE){
   request_body <- form_request_body(service='ReportService', root_name='getReportJobStatus', data=request_data)
   httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
   result <- parse_soap_response(httr_response=httr_response, resp_element='getReportJobStatusResponse', as_df=as_df)
@@ -141,7 +144,7 @@ dfp_getReportJobStatus <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{name}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ReportService#getSavedQueriesByStatement}{Google Documentation for getSavedQueriesByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ReportService#getSavedQueriesByStatement}{Google Documentation for getSavedQueriesByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -153,15 +156,16 @@ dfp_getReportJobStatus <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' @examples
 #' \dontrun{
 #' request_data <- list(filterStatement=list(query="WHERE id = 936165016"))
-#' this_result <- dfp_getSavedQueriesByStatement(request_data, as_df=FALSE)
-#' this_report_query <- this_result[[1]]$reportQuery
+#' this_result <- dfp_getSavedQueriesByStatement(request_data)
+#' this_report_query <- this_result$reportQuery
 #' 
 #' # resubmit the report job with the saved query
 #' report_data <- list(reportJob=list(reportQuery = this_report_query))
 #' report_data <- dfp_full_report_wrapper(report_data)
 #' }
+
 #' @export
-dfp_getSavedQueriesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
+dfp_getSavedQueriesByStatement <- function(request_data, as_df=FALSE, verbose=FALSE){
   request_body <- form_request_body(service='ReportService', root_name='getSavedQueriesByStatement', data=request_data)
   httr_response <- execute_soap_request(request_body=request_body, verbose=verbose)
   result <- parse_soap_response(httr_response=httr_response, resp_element='getSavedQueriesByStatementResponse', as_df=as_df)
@@ -176,7 +180,7 @@ dfp_getSavedQueriesByStatement <- function(request_data, as_df=TRUE, verbose=FAL
 #'   \item{ReportJob reportQuery}
 #' } 
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ReportService#runReportJob}{Google Documentation for runReportJob}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ReportService#runReportJob}{Google Documentation for runReportJob}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -199,6 +203,7 @@ dfp_getSavedQueriesByStatement <- function(request_data, as_df=TRUE, verbose=FAL
 #' dfp_runReportJob_result <- dfp_runReportJob(request_data)
 #' dfp_runReportJob_result$id
 #' }
+
 #' @export
 dfp_runReportJob <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ReportService', root_name='runReportJob', data=request_data)

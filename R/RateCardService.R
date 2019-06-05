@@ -3,15 +3,15 @@
 #' Provides methods for managing RateCard objects.
 #' To use this service, you
 #' need to have the new sales management solution enabled on your network. If
-#' you do not see a "Sales" tab in
-#' \href{https://www.google.com/dfp}{DoubleClick for Publishers (DFP)}, you
+#' you do not see a "Sales" tab in <a
+#' href="https://www.google.com/dfp">DoubleClick for Publishers (DFP)</a>, you
 #' will not be able to use this service.
 #' 
 #' createRateCards
 #' 
 #' Creates a list of RateCard objects. Rate cards must be activated before being associated with proposal line items and products.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/RateCardService#createRateCards}{Google Documentation for createRateCards}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/RateCardService#createRateCards}{Google Documentation for createRateCards}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -24,6 +24,7 @@
 #' \dontrun{
 #'  res <- dfp_createRateCards(request_data)
 #' }
+
 #' @export
 dfp_createRateCards <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='RateCardService', root_name='createRateCards', data=request_data)
@@ -43,7 +44,7 @@ dfp_createRateCards <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{Status}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/RateCardService#getRateCardsByStatement}{Google Documentation for getRateCardsByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/RateCardService#getRateCardsByStatement}{Google Documentation for getRateCardsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -57,6 +58,7 @@ dfp_createRateCards <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getRateCardsByStatement(dat)
 #' }
+
 #' @export
 dfp_getRateCardsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='RateCardService', root_name='getRateCardsByStatement', data=request_data)
@@ -69,7 +71,7 @@ dfp_getRateCardsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE)
 #' 
 #' Performs action on RateCard objects that satisfy the given Statement query.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/RateCardService#performRateCardAction}{Google Documentation for performRateCardAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/RateCardService#performRateCardAction}{Google Documentation for performRateCardAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -82,6 +84,7 @@ dfp_getRateCardsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE)
 #' \dontrun{
 #'  res <- dfp_performRateCardAction(request_data)
 #' }
+
 #' @export
 dfp_performRateCardAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='RateCardService', root_name='performRateCardAction', data=request_data)
@@ -94,7 +97,7 @@ dfp_performRateCardAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' Updates a list of RateCard objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/RateCardService#updateRateCards}{Google Documentation for updateRateCards}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/RateCardService#updateRateCards}{Google Documentation for updateRateCards}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -107,6 +110,7 @@ dfp_performRateCardAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' \dontrun{
 #'  res <- dfp_updateRateCards(request_data)
 #' }
+
 #' @export
 dfp_updateRateCards <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='RateCardService', root_name='updateRateCards', data=request_data)

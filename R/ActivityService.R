@@ -12,7 +12,7 @@
 #' 
 #' Creates a new Activity objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ActivityService#createActivities}{Google Documentation for createActivities}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ActivityService#createActivities}{Google Documentation for createActivities}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -25,6 +25,7 @@
 #' \dontrun{
 #'  res <- dfp_createActivities(request_data)
 #' }
+
 #' @export
 dfp_createActivities <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ActivityService', root_name='createActivities', data=request_data)
@@ -44,7 +45,7 @@ dfp_createActivities <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{activityGroupId}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ActivityService#getActivitiesByStatement}{Google Documentation for getActivitiesByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ActivityService#getActivitiesByStatement}{Google Documentation for getActivitiesByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -58,6 +59,7 @@ dfp_createActivities <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getActivitiesByStatement(dat)
 #' }
+
 #' @export
 dfp_getActivitiesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ActivityService', root_name='getActivitiesByStatement', data=request_data)
@@ -70,7 +72,7 @@ dfp_getActivitiesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE
 #' 
 #' Updates the specified Activity objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ActivityService#updateActivities}{Google Documentation for updateActivities}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ActivityService#updateActivities}{Google Documentation for updateActivities}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -83,6 +85,7 @@ dfp_getActivitiesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE
 #' \dontrun{
 #'  res <- dfp_updateActivities(request_data)
 #' }
+
 #' @export
 dfp_updateActivities <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ActivityService', root_name='updateActivities', data=request_data)

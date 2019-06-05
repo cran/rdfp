@@ -14,7 +14,7 @@
 #'   \item{startDate}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ReconciliationReportService#getReconciliationReportsByStatement}{Google Documentation for getReconciliationReportsByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ReconciliationReportService#getReconciliationReportsByStatement}{Google Documentation for getReconciliationReportsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -28,6 +28,7 @@
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getReconciliationReportsByStatement(dat)
 #' }
+
 #' @export
 dfp_getReconciliationReportsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ReconciliationReportService', root_name='getReconciliationReportsByStatement', data=request_data)
@@ -40,7 +41,7 @@ dfp_getReconciliationReportsByStatement <- function(request_data, as_df=TRUE, ve
 #' 
 #' Updates the specified ReconciliationReport objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ReconciliationReportService#updateReconciliationReports}{Google Documentation for updateReconciliationReports}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ReconciliationReportService#updateReconciliationReports}{Google Documentation for updateReconciliationReports}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -53,6 +54,7 @@ dfp_getReconciliationReportsByStatement <- function(request_data, as_df=TRUE, ve
 #' \dontrun{
 #'  res <- dfp_updateReconciliationReports(request_data)
 #' }
+
 #' @export
 dfp_updateReconciliationReports <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ReconciliationReportService', root_name='updateReconciliationReports', data=request_data)

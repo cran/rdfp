@@ -10,7 +10,7 @@
 #'   \item{CustomFieldOption customFieldId}
 #' } 
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CustomFieldService#createCustomFieldOptions}{Google Documentation for createCustomFieldOptions}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/CustomFieldService#createCustomFieldOptions}{Google Documentation for createCustomFieldOptions}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -25,6 +25,7 @@
 #'                            displayName=c('Morning', 'Afternoon', 'Evening'))
 #' result <- dfp_createCustomFieldOptions(request_data)
 #' }
+
 #' @export
 dfp_createCustomFieldOptions <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomFieldService', root_name='createCustomFieldOptions', data=request_data)
@@ -43,7 +44,7 @@ dfp_createCustomFieldOptions <- function(request_data, as_df=TRUE, verbose=FALSE
 #'   \item{CustomField visibility}
 #' } 
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CustomFieldService#createCustomFields}{Google Documentation for createCustomFields}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/CustomFieldService#createCustomFields}{Google Documentation for createCustomFields}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -61,6 +62,7 @@ dfp_createCustomFieldOptions <- function(request_data, as_df=TRUE, verbose=FALSE
 #'                            visibility='FULL')
 #' result <- dfp_createCustomFields(request_data)
 #' }
+
 #' @export
 dfp_createCustomFields <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomFieldService', root_name='createCustomFields', data=request_data)
@@ -73,7 +75,7 @@ dfp_createCustomFields <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' Returns the CustomFieldOption uniquely identified by the given ID.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CustomFieldService#getCustomFieldOption}{Google Documentation for getCustomFieldOption}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/CustomFieldService#getCustomFieldOption}{Google Documentation for getCustomFieldOption}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -86,6 +88,7 @@ dfp_createCustomFields <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' \dontrun{
 #'  res <- dfp_getCustomFieldOption(request_data)
 #' }
+
 #' @export
 dfp_getCustomFieldOption <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomFieldService', root_name='getCustomFieldOption', data=request_data)
@@ -105,7 +108,7 @@ dfp_getCustomFieldOption <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{visibility}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CustomFieldService#getCustomFieldsByStatement}{Google Documentation for getCustomFieldsByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/CustomFieldService#getCustomFieldsByStatement}{Google Documentation for getCustomFieldsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -119,6 +122,7 @@ dfp_getCustomFieldOption <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getCustomFieldsByStatement(dat)
 #' }
+
 #' @export
 dfp_getCustomFieldsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomFieldService', root_name='getCustomFieldsByStatement', data=request_data)
@@ -131,7 +135,7 @@ dfp_getCustomFieldsByStatement <- function(request_data, as_df=TRUE, verbose=FAL
 #' 
 #' Performs actions on CustomField objects that match the given Statement query.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CustomFieldService#performCustomFieldAction}{Google Documentation for performCustomFieldAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/CustomFieldService#performCustomFieldAction}{Google Documentation for performCustomFieldAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -144,6 +148,7 @@ dfp_getCustomFieldsByStatement <- function(request_data, as_df=TRUE, verbose=FAL
 #' \dontrun{
 #'  res <- dfp_performCustomFieldAction(request_data)
 #' }
+
 #' @export
 dfp_performCustomFieldAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomFieldService', root_name='performCustomFieldAction', data=request_data)
@@ -156,7 +161,7 @@ dfp_performCustomFieldAction <- function(request_data, as_df=TRUE, verbose=FALSE
 #' 
 #' Updates the specified CustomFieldOption objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CustomFieldService#updateCustomFieldOptions}{Google Documentation for updateCustomFieldOptions}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/CustomFieldService#updateCustomFieldOptions}{Google Documentation for updateCustomFieldOptions}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -169,6 +174,7 @@ dfp_performCustomFieldAction <- function(request_data, as_df=TRUE, verbose=FALSE
 #' \dontrun{
 #'  res <- dfp_updateCustomFieldOptions(request_data)
 #' }
+
 #' @export
 dfp_updateCustomFieldOptions <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomFieldService', root_name='updateCustomFieldOptions', data=request_data)
@@ -181,7 +187,7 @@ dfp_updateCustomFieldOptions <- function(request_data, as_df=TRUE, verbose=FALSE
 #' 
 #' Updates the specified CustomField objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/CustomFieldService#updateCustomFields}{Google Documentation for updateCustomFields}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/CustomFieldService#updateCustomFields}{Google Documentation for updateCustomFields}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -194,6 +200,7 @@ dfp_updateCustomFieldOptions <- function(request_data, as_df=TRUE, verbose=FALSE
 #' \dontrun{
 #'  res <- dfp_updateCustomFields(request_data)
 #' }
+
 #' @export
 dfp_updateCustomFields <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='CustomFieldService', root_name='updateCustomFields', data=request_data)

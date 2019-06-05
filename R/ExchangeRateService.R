@@ -10,7 +10,7 @@
 #'   \item{ExchangeRate exchangeRate when ExchangeRate refreshRate is ExchangeRateRefreshRate FIXED}
 #' } 
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ExchangeRateService#createExchangeRates}{Google Documentation for createExchangeRates}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ExchangeRateService#createExchangeRates}{Google Documentation for createExchangeRates}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -23,6 +23,7 @@
 #' \dontrun{
 #'  res <- dfp_createExchangeRates(request_data)
 #' }
+
 #' @export
 dfp_createExchangeRates <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ExchangeRateService', root_name='createExchangeRates', data=request_data)
@@ -42,7 +43,7 @@ dfp_createExchangeRates <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{exchangeRate}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ExchangeRateService#getExchangeRatesByStatement}{Google Documentation for getExchangeRatesByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ExchangeRateService#getExchangeRatesByStatement}{Google Documentation for getExchangeRatesByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -56,6 +57,7 @@ dfp_createExchangeRates <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getExchangeRatesByStatement(dat)
 #' }
+
 #' @export
 dfp_getExchangeRatesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ExchangeRateService', root_name='getExchangeRatesByStatement', data=request_data)
@@ -75,7 +77,7 @@ dfp_getExchangeRatesByStatement <- function(request_data, as_df=TRUE, verbose=FA
 #'   \item{exchangeRate}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ExchangeRateService#performExchangeRateAction}{Google Documentation for performExchangeRateAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ExchangeRateService#performExchangeRateAction}{Google Documentation for performExchangeRateAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -88,6 +90,7 @@ dfp_getExchangeRatesByStatement <- function(request_data, as_df=TRUE, verbose=FA
 #' \dontrun{
 #'  res <- dfp_performExchangeRateAction(request_data)
 #' }
+
 #' @export
 dfp_performExchangeRateAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ExchangeRateService', root_name='performExchangeRateAction', data=request_data)
@@ -100,7 +103,7 @@ dfp_performExchangeRateAction <- function(request_data, as_df=TRUE, verbose=FALS
 #' 
 #' Updates the specified ExchangeRate objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ExchangeRateService#updateExchangeRates}{Google Documentation for updateExchangeRates}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ExchangeRateService#updateExchangeRates}{Google Documentation for updateExchangeRates}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -113,6 +116,7 @@ dfp_performExchangeRateAction <- function(request_data, as_df=TRUE, verbose=FALS
 #' \dontrun{
 #'  res <- dfp_updateExchangeRates(request_data)
 #' }
+
 #' @export
 dfp_updateExchangeRates <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ExchangeRateService', root_name='updateExchangeRates', data=request_data)

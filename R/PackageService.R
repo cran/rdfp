@@ -3,8 +3,8 @@
 #' Provides methods for creating, updating and retrieving Package objects.
 #'
 #' To use this service, you need to have the new sales management solution
-#' enabled on your network. If you do not see a "Sales" tab in
-#' \href{https://www.google.com/dfp}{DoubleClick for Publishers (DFP)}, you
+#' enabled on your network. If you do not see a "Sales" tab in <a
+#' href="https://www.google.com/dfp">DoubleClick for Publishers (DFP)</a>, you
 #' will not be able to use this service.
 #' 
 #' createPackages
@@ -16,7 +16,7 @@
 #'   \item{Package name}
 #' } 
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/PackageService#createPackages}{Google Documentation for createPackages}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/PackageService#createPackages}{Google Documentation for createPackages}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -29,6 +29,7 @@
 #' \dontrun{
 #'  res <- dfp_createPackages(request_data)
 #' }
+
 #' @export
 dfp_createPackages <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='PackageService', root_name='createPackages', data=request_data)
@@ -49,7 +50,7 @@ dfp_createPackages <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{lastModifiedDateTime}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/PackageService#getPackagesByStatement}{Google Documentation for getPackagesByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/PackageService#getPackagesByStatement}{Google Documentation for getPackagesByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -63,6 +64,7 @@ dfp_createPackages <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getPackagesByStatement(dat)
 #' }
+
 #' @export
 dfp_getPackagesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='PackageService', root_name='getPackagesByStatement', data=request_data)
@@ -75,7 +77,7 @@ dfp_getPackagesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' Performs actions on Package objects that match the given Statement.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/PackageService#performPackageAction}{Google Documentation for performPackageAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/PackageService#performPackageAction}{Google Documentation for performPackageAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -88,6 +90,7 @@ dfp_getPackagesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' \dontrun{
 #'  res <- dfp_performPackageAction(request_data)
 #' }
+
 #' @export
 dfp_performPackageAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='PackageService', root_name='performPackageAction', data=request_data)
@@ -100,7 +103,7 @@ dfp_performPackageAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' Updates the specified Package objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/PackageService#updatePackages}{Google Documentation for updatePackages}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/PackageService#updatePackages}{Google Documentation for updatePackages}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -113,6 +116,7 @@ dfp_performPackageAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' \dontrun{
 #'  res <- dfp_updatePackages(request_data)
 #' }
+
 #' @export
 dfp_updatePackages <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='PackageService', root_name='updatePackages', data=request_data)

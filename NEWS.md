@@ -1,3 +1,28 @@
+## rdfp 0.1.4
+
+In this version of the package we have upgraded from `v201811` to `v201905`. Please 
+read the announced changes on Google's website since they will be reflected in the 
+package exactly as explained there at https://developers.google.com/ad-manager/api/rel_notes#v201905
+
+### Features
+
+  * The `as_df` argument will now return tidier tibbles, meaning that elements that 
+  are nested lists will stay as nested lists. For example, if you use `dfp_getLineItemsByStatement()` 
+  then each row will be a line item, but the nested parts, like `targeting` will 
+  be in a single column as a column of lists. Also, setting `as_df=FALSE` will no 
+  longer return lists of length one, but the actual result so you do not need to always 
+  be using result[[1]] to get after the returned result. This means that some of your 
+  existing scripts may break if you are stil using this notation. Please view the 
+  examples and/or vignettes to see the current structure you should be using if you 
+  are having trouble.
+
+### Bug Fixes
+
+  * Fix an issue with the `dfp_full_report_wrapper()` that was ignoring the `check_interval` 
+  argument (#11)
+
+___
+
 ## rdfp 0.1.3 [release](https://github.com/StevenMMortimer/rdfp/releases/tag/v0.1.3)
 
 **Note**: DoubleClick for Publishers was recently renamed to Google Ad Manager. For 

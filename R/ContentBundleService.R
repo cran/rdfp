@@ -10,7 +10,7 @@
 #' 
 #' Creates new ContentBundle objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ContentBundleService#createContentBundles}{Google Documentation for createContentBundles}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ContentBundleService#createContentBundles}{Google Documentation for createContentBundles}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -23,6 +23,7 @@
 #' \dontrun{
 #'  res <- dfp_createContentBundles(request_data)
 #' }
+
 #' @export
 dfp_createContentBundles <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ContentBundleService', root_name='createContentBundles', data=request_data)
@@ -40,7 +41,7 @@ dfp_createContentBundles <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{status}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ContentBundleService#getContentBundlesByStatement}{Google Documentation for getContentBundlesByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ContentBundleService#getContentBundlesByStatement}{Google Documentation for getContentBundlesByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -54,6 +55,7 @@ dfp_createContentBundles <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getContentBundlesByStatement(dat)
 #' }
+
 #' @export
 dfp_getContentBundlesByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ContentBundleService', root_name='getContentBundlesByStatement', data=request_data)
@@ -66,7 +68,7 @@ dfp_getContentBundlesByStatement <- function(request_data, as_df=TRUE, verbose=F
 #' 
 #' Performs actions on ContentBundle objects that match the given Statement query.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ContentBundleService#performContentBundleAction}{Google Documentation for performContentBundleAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ContentBundleService#performContentBundleAction}{Google Documentation for performContentBundleAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -79,6 +81,7 @@ dfp_getContentBundlesByStatement <- function(request_data, as_df=TRUE, verbose=F
 #' \dontrun{
 #'  res <- dfp_performContentBundleAction(request_data)
 #' }
+
 #' @export
 dfp_performContentBundleAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ContentBundleService', root_name='performContentBundleAction', data=request_data)
@@ -91,7 +94,7 @@ dfp_performContentBundleAction <- function(request_data, as_df=TRUE, verbose=FAL
 #' 
 #' Updates the specified ContentBundle objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ContentBundleService#updateContentBundles}{Google Documentation for updateContentBundles}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ContentBundleService#updateContentBundles}{Google Documentation for updateContentBundles}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -104,6 +107,7 @@ dfp_performContentBundleAction <- function(request_data, as_df=TRUE, verbose=FAL
 #' \dontrun{
 #'  res <- dfp_updateContentBundles(request_data)
 #' }
+
 #' @export
 dfp_updateContentBundles <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ContentBundleService', root_name='updateContentBundles', data=request_data)

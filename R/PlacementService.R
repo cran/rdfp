@@ -12,7 +12,7 @@
 #' 
 #' Creates new Placement objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/PlacementService#createPlacements}{Google Documentation for createPlacements}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/PlacementService#createPlacements}{Google Documentation for createPlacements}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -25,6 +25,7 @@
 #' \dontrun{
 #'  res <- dfp_createPlacements(request_data)
 #' }
+
 #' @export
 dfp_createPlacements <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='PlacementService', root_name='createPlacements', data=request_data)
@@ -39,14 +40,13 @@ dfp_createPlacements <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' \itemize{
 #'   \item{description}
 #'   \item{id}
-#'   \item{isAdSenseTargetingEnabled}
 #'   \item{name}
 #'   \item{placementCode}
 #'   \item{status}
 #'   \item{lastModifiedDateTime}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/PlacementService#getPlacementsByStatement}{Google Documentation for getPlacementsByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/PlacementService#getPlacementsByStatement}{Google Documentation for getPlacementsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -60,6 +60,7 @@ dfp_createPlacements <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getPlacementsByStatement(dat)
 #' }
+
 #' @export
 dfp_getPlacementsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='PlacementService', root_name='getPlacementsByStatement', data=request_data)
@@ -72,7 +73,7 @@ dfp_getPlacementsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE
 #' 
 #' Performs actions on Placement objects that match the given Statement query.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/PlacementService#performPlacementAction}{Google Documentation for performPlacementAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/PlacementService#performPlacementAction}{Google Documentation for performPlacementAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -85,6 +86,7 @@ dfp_getPlacementsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE
 #' \dontrun{
 #'  res <- dfp_performPlacementAction(request_data)
 #' }
+
 #' @export
 dfp_performPlacementAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='PlacementService', root_name='performPlacementAction', data=request_data)
@@ -97,7 +99,7 @@ dfp_performPlacementAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' 
 #' Updates the specified Placement objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/PlacementService#updatePlacements}{Google Documentation for updatePlacements}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/PlacementService#updatePlacements}{Google Documentation for updatePlacements}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -110,6 +112,7 @@ dfp_performPlacementAction <- function(request_data, as_df=TRUE, verbose=FALSE){
 #' \dontrun{
 #'  res <- dfp_updatePlacements(request_data)
 #' }
+
 #' @export
 dfp_updatePlacements <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='PlacementService', root_name='updatePlacements', data=request_data)

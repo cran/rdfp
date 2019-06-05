@@ -17,7 +17,7 @@
 #'   \item{LiveStreamEvent adTags}
 #' } 
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/LiveStreamEventService#createLiveStreamEvents}{Google Documentation for createLiveStreamEvents}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/LiveStreamEventService#createLiveStreamEvents}{Google Documentation for createLiveStreamEvents}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -30,6 +30,7 @@
 #' \dontrun{
 #'  res <- dfp_createLiveStreamEvents(request_data)
 #' }
+
 #' @export
 dfp_createLiveStreamEvents <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LiveStreamEventService', root_name='createLiveStreamEvents', data=request_data)
@@ -45,7 +46,7 @@ dfp_createLiveStreamEvents <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'   \item{id}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/LiveStreamEventService#getLiveStreamEventsByStatement}{Google Documentation for getLiveStreamEventsByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/LiveStreamEventService#getLiveStreamEventsByStatement}{Google Documentation for getLiveStreamEventsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -59,6 +60,7 @@ dfp_createLiveStreamEvents <- function(request_data, as_df=TRUE, verbose=FALSE){
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getLiveStreamEventsByStatement(dat)
 #' }
+
 #' @export
 dfp_getLiveStreamEventsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LiveStreamEventService', root_name='getLiveStreamEventsByStatement', data=request_data)
@@ -71,7 +73,7 @@ dfp_getLiveStreamEventsByStatement <- function(request_data, as_df=TRUE, verbose
 #' 
 #' Performs actions on LiveStreamEvent objects that match the given Statement query.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/LiveStreamEventService#performLiveStreamEventAction}{Google Documentation for performLiveStreamEventAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/LiveStreamEventService#performLiveStreamEventAction}{Google Documentation for performLiveStreamEventAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -84,6 +86,7 @@ dfp_getLiveStreamEventsByStatement <- function(request_data, as_df=TRUE, verbose
 #' \dontrun{
 #'  res <- dfp_performLiveStreamEventAction(request_data)
 #' }
+
 #' @export
 dfp_performLiveStreamEventAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LiveStreamEventService', root_name='performLiveStreamEventAction', data=request_data)
@@ -97,7 +100,7 @@ dfp_performLiveStreamEventAction <- function(request_data, as_df=TRUE, verbose=F
 #' Registers the specified list of sessionIds for monitoring. Once the session IDs have been registered, all logged information about the sessions will be persisted and can be viewed via the Ad Manager UI.
 #' A session ID is a unique identifier of a single user watching a live stream event.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/LiveStreamEventService#registerSessionsForMonitoring}{Google Documentation for registerSessionsForMonitoring}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/LiveStreamEventService#registerSessionsForMonitoring}{Google Documentation for registerSessionsForMonitoring}
 #' 
 #' @param as_df a boolean indicating whether to attempt to parse the result into
 #' a \code{data.frame}
@@ -107,6 +110,7 @@ dfp_performLiveStreamEventAction <- function(request_data, as_df=TRUE, verbose=F
 #' \dontrun{
 #'  res <- dfp_registerSessionsForMonitoring()
 #' }
+
 #' @export
 dfp_registerSessionsForMonitoring <- function(as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LiveStreamEventService', root_name='registerSessionsForMonitoring', data=NULL)
@@ -119,7 +123,7 @@ dfp_registerSessionsForMonitoring <- function(as_df=TRUE, verbose=FALSE){
 #' 
 #' Updates the specified LiveStreamEvent objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/LiveStreamEventService#updateLiveStreamEvents}{Google Documentation for updateLiveStreamEvents}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/LiveStreamEventService#updateLiveStreamEvents}{Google Documentation for updateLiveStreamEvents}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -132,6 +136,7 @@ dfp_registerSessionsForMonitoring <- function(as_df=TRUE, verbose=FALSE){
 #' \dontrun{
 #'  res <- dfp_updateLiveStreamEvents(request_data)
 #' }
+
 #' @export
 dfp_updateLiveStreamEvents <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='LiveStreamEventService', root_name='updateLiveStreamEvents', data=request_data)

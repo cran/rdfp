@@ -6,14 +6,14 @@
 #' a ProductPackage.
 #' To use this service, you need to have the new sales
 #' management solution enabled on your network. If you do not see a "Sales"
-#' tab in \href{https://www.google.com/dfp}{DoubleClick for Publishers (DFP)},
-#' you will not be able to use this service.
+#' tab in <a href="https://www.google.com/dfp">DoubleClick for Publishers
+#' (DFP)</a>, you will not be able to use this service.
 #' 
 #' createProductPackageItems
 #' 
 #' Creates new ProductPackageItem objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ProductPackageItemService#createProductPackageItems}{Google Documentation for createProductPackageItems}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ProductPackageItemService#createProductPackageItems}{Google Documentation for createProductPackageItems}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -26,6 +26,7 @@
 #' \dontrun{
 #'  res <- dfp_createProductPackageItems(request_data)
 #' }
+
 #' @export
 dfp_createProductPackageItems <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProductPackageItemService', root_name='createProductPackageItems', data=request_data)
@@ -46,7 +47,7 @@ dfp_createProductPackageItems <- function(request_data, as_df=TRUE, verbose=FALS
 #'   \item{archived}
 #' }
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ProductPackageItemService#getProductPackageItemsByStatement}{Google Documentation for getProductPackageItemsByStatement}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ProductPackageItemService#getProductPackageItemsByStatement}{Google Documentation for getProductPackageItemsByStatement}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -60,6 +61,7 @@ dfp_createProductPackageItems <- function(request_data, as_df=TRUE, verbose=FALS
 #'  dat <- list(filterStatement=list('query'="WHERE status='ACTIVE'")) 
 #'  res <- dfp_getProductPackageItemsByStatement(dat)
 #' }
+
 #' @export
 dfp_getProductPackageItemsByStatement <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProductPackageItemService', root_name='getProductPackageItemsByStatement', data=request_data)
@@ -72,7 +74,7 @@ dfp_getProductPackageItemsByStatement <- function(request_data, as_df=TRUE, verb
 #' 
 #' Performs actions on ProductPackageItem objects that satisfy the given Statement query.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ProductPackageItemService#performProductPackageItemAction}{Google Documentation for performProductPackageItemAction}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ProductPackageItemService#performProductPackageItemAction}{Google Documentation for performProductPackageItemAction}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -85,6 +87,7 @@ dfp_getProductPackageItemsByStatement <- function(request_data, as_df=TRUE, verb
 #' \dontrun{
 #'  res <- dfp_performProductPackageItemAction(request_data)
 #' }
+
 #' @export
 dfp_performProductPackageItemAction <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProductPackageItemService', root_name='performProductPackageItemAction', data=request_data)
@@ -97,7 +100,7 @@ dfp_performProductPackageItemAction <- function(request_data, as_df=TRUE, verbos
 #' 
 #' Updates the specified ProductPackageItem objects.
 #' 
-#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201811/ProductPackageItemService#updateProductPackageItems}{Google Documentation for updateProductPackageItems}
+#' @seealso \href{https://developers.google.com/ad-manager/api/reference/v201905/ProductPackageItemService#updateProductPackageItems}{Google Documentation for updateProductPackageItems}
 #' 
 #' @param request_data a \code{list} or \code{data.frame} of data elements
 #' to be formatted for a SOAP
@@ -110,6 +113,7 @@ dfp_performProductPackageItemAction <- function(request_data, as_df=TRUE, verbos
 #' \dontrun{
 #'  res <- dfp_updateProductPackageItems(request_data)
 #' }
+
 #' @export
 dfp_updateProductPackageItems <- function(request_data, as_df=TRUE, verbose=FALSE){
   request_body <- form_request_body(service='ProductPackageItemService', root_name='updateProductPackageItems', data=request_data)

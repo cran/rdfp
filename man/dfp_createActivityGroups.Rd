@@ -39,5 +39,5 @@ Creates a new ActivityGroup objects.
 }
 }
 \seealso{
-\href{https://developers.google.com/ad-manager/api/reference/v201811/ActivityGroupService#createActivityGroups}{Google Documentation for createActivityGroups}
+\href{https://developers.google.com/ad-manager/api/reference/v201905/ActivityGroupService#createActivityGroups}{Google Documentation for createActivityGroups}
 }
